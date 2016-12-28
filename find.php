@@ -82,14 +82,14 @@
                 /*border-color: #333333;*/
                 padding: 0px;
                 border-spacing: 0px;
-                }   
-            tr td {
-                background-color: #003366;
-                }    
+                }
             th td {
                 background-color: #003300;
                 text-align: center;
                 } 
+            tr td {
+                background-color: #003366;
+                }    
             td {
                 height: 40px;
                 }    
