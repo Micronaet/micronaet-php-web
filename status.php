@@ -49,8 +49,8 @@
         $q .= " and dispo_lorda <= $qta_a ";
         }
         
-    $esito = $mysql->query($q);
     $q .= ";";
+    $esito = $mysql->query($q);
     ?>
     <html>
       <head>
