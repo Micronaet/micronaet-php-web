@@ -9,20 +9,27 @@
 
     $mysql->selectDb('micronaet');
 
-    $codice = isset($_GET['codice']) ? $_GET['codice'] : null;
-    $descrizione = isset($_GET['descrizione']) ? $_GET['descrizione'] : null;
+    // Read company data:
     $company = isset($_GET['company']) ? $_GET['company']: "fia";
     $company_next = isset($_GET['company_next']) ? $_GET['company_next']: "gpb";
 
-    $q = "select m.* from magazzino_$company m where 1=1 ";
+    //Read filter data:
+    $codice = isset($_GET['codice']) ? $_GET['codice'] : null;
+    $descrizione = isset($_GET['descrizione']) ? $_GET['descrizione'] : null;
+    $qta_da = isset($_GET['qta_da']) && trim($_GET['qta_da']) != '' ? (int)$_GET['qta_da'] : null;
+    $qta_a = isset($_GET['qta_a']) && trim($_GET['qta_a']) != '' ? (int)$_GET['qta_a'] : null;
 
+    // Query generation: default
+    $q = "select m.* from magazzino_$company m where 1=1 ";
+    
+    // Query generation: code filter:
     if(!is_null($codice) && trim($codice) != ''){
         $q .= " and trim(upper(codice)) like trim(upper('%$codice%'))";
         }
 
+    // Query generation: description filter:
     if(!is_null($descrizione) && trim($descrizione) != ''){
         $key = explode(' ', $descrizione);
-
         $q .= " and  ( 1=1 ";
         $filtroCounter = 0;
         foreach ($key as $v) {
@@ -33,9 +40,7 @@
         $q .= " ) ";
         }
 
-    $qta_da = isset($_GET['qta_da']) && trim($_GET['qta_da']) != '' ? (int)$_GET['qta_da'] : null;
-    $qta_a = isset($_GET['qta_a']) && trim($_GET['qta_a']) != '' ? (int)$_GET['qta_a'] : null;
-
+    // Query generation: from / to qta:
     if(!is_null($qta_da) && trim($qta_da) != ''){
         $q .= " and dispo_lorda >= $qta_da ";
         }
@@ -43,6 +48,7 @@
     if(!is_null($qta_a) && trim($qta_a) != ''){
         $q .= " and dispo_lorda <= $qta_a ";
         }
+        
     $esito = $mysql->query($q);
     $q .= ";";
     ?>
