@@ -51,7 +51,7 @@
         
     // Query generation: end the query:    
     $q .= ";";
-
+    die($q);
     // Query generation: run!
     $esito = $mysql->query($q);
     ?>
