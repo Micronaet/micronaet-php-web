@@ -71,10 +71,13 @@
                 color: #333333;
                 font-family: Verdana, Arial, Helvetica, sans-serif;
                 }
-            tr, tr > td {
+            td {
+                height: 40px;
+                }    
+            tr, tr td {
                 background-color: #003366;
                 }    
-            th, th > td {
+            th, th td {
                 background-color: #003300;
                 text-align: center;
                 } 
@@ -131,34 +134,36 @@
         <table>
             <form name="frmCerca" method="get" action="status.php">
                 <th align="center">
-                    <td height="40" colspan="3">
+                    <td colspan="3">
                         <span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI</span><br/>
                         <span class="style1">
                             <a href=<?="find.php?company=$company_next&company_next=$company"?>><?="SELEZIONA $company_next"?></a>
                         </span><br/>
                         <!--(agg.:<?php echo " " . $d; ?> - tot. <?php echo " " . $tot; ?>)-->
                         <span class="style1">[ <?=$yourbrowser?> ]</span>
-                  </td>
+                    </td>
                 </th>
                 <tr>
-                    <td height="40"><span class="style1">&nbsp;Codice</span></td>
-                    <td height="40" colspan="2" align="center"><input name="codice" type="text" id="codice"></td>
+                    <td><span class="style1">&nbsp;Codice</span></td>
+                    <td colspan="2" align="center"><input name="codice" type="text" id="codice"></td>
                     <input type="hidden" name="company" value="<?=$company?>">
                     <input type="hidden" name="company_next" value="<?=$company_next?>">
                 </tr>
                 <tr>
-                    <td height="40"><span class="style1">&nbsp;Descrizione</span></td>
-                    <td height="40" colspan="2" align="center"><input name="descrizione" type="text" id="descrizione"></td>
+                    <td><span class="style1">&nbsp;Descrizione</span></td>
+                    <td colspan="2" align="center"><input name="descrizione" type="text" id="descrizione"></td>
                 </tr>
                 <tr>
-                    <td height="40"><span class="style1">&nbsp;Quantit&agrave;</span></td>
-                    <td height="40" colspan="2" align="center" style="color:#fff;">
-                      Da <input name="qta_da" type="number" id="qta_da" size="5"><br/> a <input name="qta_a" type="number" id="qta_a" size="5">
+                    <td><span class="style1">&nbsp;Quantit&agrave;</span></td>
+                    <td colspan="2" align="center" style="color:#fff;">
+                        Da <input name="qta_da" type="number" id="qta_da" size="5"><br/> 
+                        a <input name="qta_a" type="number" id="qta_a" size="5">
                     </td>
                 </tr>
                 <th>
-                    <td height="35" colspan="3"><input type="submit" name="Submit" value="Cerca">
-                       <input type="hidden" name="browser" value="<?=$yourbrowser?>"></td>
+                    <td colspan="3"><input type="submit" name="Submit" value="Cerca">
+                       <input type="hidden" name="browser" value="<?=$yourbrowser?>">
+                    </td>
                 </th>
             </form>
         </table>
