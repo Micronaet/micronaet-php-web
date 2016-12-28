@@ -71,10 +71,10 @@
                 color: #333333;
                 font-family: Verdana, Arial, Helvetica, sans-serif;
                 }
-            tr {
+            tr, tr > td {
                 background-color: #003366;
                 }    
-            th, th>td {
+            th, th > td {
                 background-color: #003300;
                 text-align: center;
                 } 
