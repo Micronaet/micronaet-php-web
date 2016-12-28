@@ -133,7 +133,7 @@
     <body onLoad="codice.focus();">
         <table>
             <form name="frmCerca" method="get" action="status.php">
-                <th align="center">
+                <th>
                     <td colspan="3">
                         <span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI</span><br/>
                         <span class="style1">
@@ -144,7 +144,7 @@
                     </td>
                 </th>
                 <tr>
-                    <td><span class="style1">&nbsp;Codice</span></td>
+                    <td class="style1">Codice</td>
                     <td colspan="2" align="center"><input name="codice" type="text" id="codice"></td>
                     <input type="hidden" name="company" value="<?=$company?>">
                     <input type="hidden" name="company_next" value="<?=$company_next?>">
