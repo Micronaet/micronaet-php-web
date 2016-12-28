@@ -67,18 +67,18 @@
             <style type="text/css">
             <!--
             body, td, th {
+                font-family: Verdana, Arial, Helvetica, sans-serif;
                 font-size: xx-small;
                 color: #333333;
-                font-family: Verdana, Arial, Helvetica, sans-serif;
                 }
             td {
                 height: 40px;
                 margin: 1px;
                 }    
-            tr, tr td {
+            tr, tr>td {
                 background-color: #003366;
                 }    
-            th, th td {
+            th, th>td {
                 background-color: #003300;
                 text-align: center;
                 } 
@@ -97,7 +97,6 @@
                 margin-bottom: 0px;
                 }
             input {
-                font-family: Verdana, Arial, Helvetica, sans-serif;
                 font-size: x-small;
                 }
             .style1 {
@@ -137,7 +136,7 @@
                 <th>
                     <td colspan="3" class="style1">
                         <span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI</span><br/>
-                        <a href=<?="find.php?company=$company_next&company_next=$company"?>><?="SELEZIONA $company_next"?></a><br/>
+                        <a href=<?="find.php?company=$company_next&company_next=$company"?>><?="PASSA A $company_next"?></a><br/>
                         [ <?=$yourbrowser?> ]
                     </td>
                 </th>
