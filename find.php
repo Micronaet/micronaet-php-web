@@ -82,8 +82,8 @@
                 width: 350px;
                 border: 1px;
                 border-color: #333333;
-                /*cellpadding: 0px;
-                cellspacing: 0px; */
+                padding: 0px;
+                border-spacing: 0px;
                 }   
             body {
                 background-color: #FFFFFF;
