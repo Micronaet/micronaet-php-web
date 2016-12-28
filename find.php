@@ -83,14 +83,12 @@
                 padding: 0px;
                 border-spacing: 0px;
                 }
-            th td {
+            th {
                 background-color: #002200;
                 text-align: center;
                 } 
-            tr td {
-                background-color: #003366;
-                }    
             td {
+                background-color: #003366;
                 height: 40px;
                 }    
             input {
@@ -130,20 +128,21 @@
     <body onLoad="codice.focus();">
         <table>
             <form name="frmCerca" method="get" action="status.php">
-                <th>
-                    <td colspan="2" class="style1">
+                <tr>
+                    <th colspan="2" class="style1">
                         <span class="styletitle"><?=strtoupper($company)?>: RICERCA ESISTENZA PRODOTTI</span><br/>
                         <a href=<?="find.php?company=$company_next&company_next=$company"?>>PASSA A <?=strtoupper($company_next)?></a><br/>
                         [ <?=$yourbrowser?> ]
-                    </td>
-                </th>
+                    </th>
+                </tr>
                 <tr>
                     <td class="style1">Codice</td>
                     <td align="center">
                         <input name="codice" type="text" id="codice" size="30">
+                        <input type="hidden" name="company" value="<?=$company?>">
+                        <input type="hidden" name="company_next" value="<?=$company_next?>">
+                        <input type="hidden" name="browser" value="<?=$yourbrowser?>">
                     </td>
-                    <input type="hidden" name="company" value="<?=$company?>">
-                    <input type="hidden" name="company_next" value="<?=$company_next?>">
                 </tr>
                 <tr>
                     <td class="style1">Descrizione</td>
@@ -158,11 +157,11 @@
                         a <input name="qta_a" type="number" id="qta_a" size="3" min="0" max="1000" style="width: 6em;">
                     </td>
                 </tr>
-                <th>
-                    <td colspan="2"><input type="submit" name="Submit" value="Cerca">
-                        <input type="hidden" name="browser" value="<?=$yourbrowser?>">
-                    </td>
-                </th>
+                <tr>
+                    <th colspan="2">
+                        <input type="submit" name="Submit" value="Cerca">
+                    </th>
+                </tr>
             </form>
         </table>
         <script language="JavaScript">
