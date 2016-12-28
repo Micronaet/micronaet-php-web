@@ -34,7 +34,7 @@
         $filtroCounter = 0;
         foreach ($key as $v) {
             $q .= " and
-            trim(upper(c.descrizione)) like trim(upper('%$v%'))
+            trim(upper(m.descrizione)) like trim(upper('%$v%'))
             ";
             }
         $q .= " ) ";
