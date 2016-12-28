@@ -176,12 +176,6 @@
                 $prezzo = number_format($x['prezzo'], 2, ',','');
                 $status = $x['status'];
                 /*
-                $quantity = $x['esistenza'];
-                $campagne = $x['campagne'];
-                $ordinati = $x['ordinati'];
-                $data_arrivo = $x['data_arrivo'];
-                $prenotato = $x['sospesi_cliente'];
-
                 $disponibile = (float)$quantity - (float)$prenotato - (float)$campagne;
                 $bgcolor2 = '#f19393';
                  if((float)$disponibile <= 0){
