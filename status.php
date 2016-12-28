@@ -85,6 +85,9 @@
         color: #333333;
         font-family: Verdana, Arial, Helvetica, sans-serif;
         }
+    td {
+        height: 20px;
+        }    
     body {
         background-color: #FFFFFF; 
         margin: 0px;
@@ -118,23 +121,27 @@
 
     <body>
     <table width="<?php echo $b_table_w; ?>" border="1" cellpadding="0" cellspacing="0" bordercolor="#333333">
-     <tr align="center" bgcolor="#666666">
-     <td height="20"><span class="style9"><a href='<?php echo "find.php?company=$company&company_next=$company_next";?>'><?=strtoupper($company)?> Ricerca:</a></span></td>
-     <td height="30" colspan="8" align="left"><span class="style9">Cod.:<?php echo strtoupper($_GET["codice"]); ?><br>
-      Desc.:<?=strtoupper($_GET["descrizione"])?></span><span class="style10"></span><span class="style10"></span></td>
-     </tr>
-     <tr align="center" bgcolor="#003366">
-      <td height="20"><span class="style13">Immagine</span></td>
-      <td height="20"><span class="style13">Codice</span></td>
-      <td height="20"><span class="style13">Descrizione</span></td>
-      <td height="20"><span class="style13">Disponibili</span></td>
-      <!--<td height="20"><span class="style13">Ordine fornitore</span></td>
-      <td height="20"><span class="style13">Arrivo fornitore</span></td>-->
-      <td height="20"><span class="style13">Impegnati clienti</span></td>
-      <!--<td height="20"><span class="style13">Impegnati campagne</span>-->
-      <td height="20"><span class="style13">Prezzo</span></td>
-      <td height="20"><span class="style13">Status</span></td>
-     </tr>
+        <tr align="center" bgcolor="#666666">
+            <td class="style9">
+                <a href='<?php echo "find.php?company=$company&company_next=$company_next";?>'><?=strtoupper($company)?> Ricerca:</a>
+            </td>
+            <td colspan="8" align="left" class="style9">
+                Cod.: <?=strtoupper($_GET["codice"]);?><br />
+                Desc.: <?=strtoupper($_GET["descrizione"])?>
+            </td>
+        </tr>
+        <tr align="center" bgcolor="#003366">
+            <td class="style13">Immagine</td>
+            <td class="style13">Codice</td>
+            <td class="style13">Descrizione</td>
+            <td class="style13">Disponibili</td>
+            <!--<td height="20"><span class="style13">Ordine fornitore</span></td>
+            <td><span class="style13">Arrivo fornitore</span></td>-->
+            <td class="style13">Impegnati clienti</td>
+            <!--<td height="20"><span class="style13">Impegnati campagne</span>-->
+            <td class="style13">Prezzo</td>
+            <td class="style13">Status</td>
+        </tr>         
     <?php
     $count = 0;
     foreach($esito as $x){
