@@ -15,7 +15,6 @@
     $company_next = isset($_GET['company_next']) ? $_GET['company_next']: "gpb";
 
     $q = "select m.* from magazzino_$company m where 1=1 ";
-    die($q);
 
     if(!is_null($codice) && trim($codice) != ''){
         $q .= " and trim(upper(codice)) like trim(upper('%$codice%'))";
