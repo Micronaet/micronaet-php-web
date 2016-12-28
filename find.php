@@ -140,7 +140,7 @@
                 <tr>
                     <td class="style1">Codice</td>
                     <td colspan="2" align="center">
-                        <input name="codice" type="text" id="codice" size="10">
+                        <input name="codice" type="text" id="codice" size="30">
                     </td>
                     <input type="hidden" name="company" value="<?=$company?>">
                     <input type="hidden" name="company_next" value="<?=$company_next?>">
