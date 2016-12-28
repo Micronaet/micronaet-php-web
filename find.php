@@ -66,11 +66,25 @@
         </script>
             <style type="text/css">
             <!--
-            body,td,th {
+            body, td, th {
                 font-size: xx-small;
                 color: #333333;
                 font-family: Verdana, Arial, Helvetica, sans-serif;
                 }
+            tr {
+                background-color: #003366;
+                }    
+            th {
+                background-color: #003300;
+                text-align: center;
+                } 
+            table {
+                width: 350px;
+                border: 1px;
+                border-color: #333333;
+                /*cellpadding: 0px;
+                cellspacing: 0px; */
+                }   
             body {
                 background-color: #FFFFFF;
                 margin-left: 0px;
@@ -114,40 +128,39 @@
         </style>
     </head>
     <body onLoad="codice.focus();">
-        <table width="350" border="1" cellpadding="0" cellspacing="0" bordercolor="#333333">
-        <form name="frmCerca" method="get" action="status.php">
-          <tr align="center" bgcolor="#003300">
-              <td height="40" colspan="3">
-                  <span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI</span><br/>
-                  <span class="style1">
-                      <a href=<?="find.php?company=$company_next&company_next=$company"?>><?="SELEZIONA $company_next"?></a>
-                  </span><br/>
-                  <!--(agg.:<?php echo " " . $d; ?> - tot. <?php echo " " . $tot; ?>)-->
-                  <span class="style1">[ <?=$yourbrowser?> ]</span><br/>
-            </td>
-          </tr>
-          <tr bgcolor="#003366">
-              <td height="40"><span class="style1">&nbsp;Codice</span></td>
-              <td height="40" colspan="2" align="center"><input name="codice" type="text" id="codice"></td>
-              <input type="hidden" name="company" value="<?=$company?>">
-              <input type="hidden" name="company_next" value="<?=$company_next?>">
-          </tr>
-          <tr bgcolor="#003366">
-              <td height="40"><span class="style1">&nbsp;Descrizione</span></td>
-              <td height="40" colspan="2" align="center"><input name="descrizione" type="text" id="descrizione"></td>
-          </tr>
-          <tr bgcolor="#003366">
-              <td height="50"><span class="style1">&nbsp;Quantit&agrave;</span></td>
-              <td height="50" colspan="2" align="center" style="color:#fff;">
-                Da <input name="qta_da" type="number" id="qta_da" size="5"><br/> a <input name="qta_a" type="number" id="qta_a" size="5">
-            </td>
-          </tr>
-          <tr align="center" bgcolor="#003300">
-            <td height="35" colspan="3"><input type="submit" name="Submit" value="Cerca">
-              <input type="hidden" name="browser" value="<?=$yourbrowser?>"></td>
-
-            </tr>
-        </form>
+        <table>
+            <form name="frmCerca" method="get" action="status.php">
+                <th align="center">
+                    <td height="40" colspan="3">
+                        <span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI</span><br/>
+                        <span class="style1">
+                            <a href=<?="find.php?company=$company_next&company_next=$company"?>><?="SELEZIONA $company_next"?></a>
+                        </span><br/>
+                        <!--(agg.:<?php echo " " . $d; ?> - tot. <?php echo " " . $tot; ?>)-->
+                        <span class="style1">[ <?=$yourbrowser?> ]</span>
+                  </td>
+                </th>
+                <tr>
+                    <td height="40"><span class="style1">&nbsp;Codice</span></td>
+                    <td height="40" colspan="2" align="center"><input name="codice" type="text" id="codice"></td>
+                    <input type="hidden" name="company" value="<?=$company?>">
+                    <input type="hidden" name="company_next" value="<?=$company_next?>">
+                </tr>
+                <tr>
+                    <td height="40"><span class="style1">&nbsp;Descrizione</span></td>
+                    <td height="40" colspan="2" align="center"><input name="descrizione" type="text" id="descrizione"></td>
+                </tr>
+                <tr>
+                    <td height="40"><span class="style1">&nbsp;Quantit&agrave;</span></td>
+                    <td height="40" colspan="2" align="center" style="color:#fff;">
+                      Da <input name="qta_da" type="number" id="qta_da" size="5"><br/> a <input name="qta_a" type="number" id="qta_a" size="5">
+                    </td>
+                </tr>
+                <th>
+                    <td height="35" colspan="3"><input type="submit" name="Submit" value="Cerca">
+                       <input type="hidden" name="browser" value="<?=$yourbrowser?>"></td>
+                </th>
+            </form>
         </table>
         <script language="JavaScript">
             setFocus();
