@@ -78,7 +78,7 @@
                 /*background-color: #003366;*/
                 }    
             th, th td {
-                background-color: #003300;
+                background-color: #333333;
                 text-align: center;
                 } 
             table {
