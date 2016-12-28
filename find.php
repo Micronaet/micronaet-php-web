@@ -117,11 +117,14 @@
         <table width="350" border="1" cellpadding="0" cellspacing="0" bordercolor="#333333">
         <form name="frmCerca" method="get" action="status.php">
           <tr align="center" bgcolor="#003300">
-            <td height="40" colspan="3"><span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI
-            <br><span class="style1"><a href=<?="find.php?company=$company_next&company_next=$company"?>><?="SELEZIONA $company_next"?></a></span>
-            <!--(agg.:<?php echo " " . $d; ?> - tot. <?php echo " " . $tot; ?>)--><br>
-            [ <?=$yourbrowser?> ]
-        </span></td>
+            <td height="40" colspan="3">
+                <span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI</span><br/>
+                <span class="style1">
+                    <a href=<?="find.php?company=$company_next&company_next=$company"?>><?="SELEZIONA $company_next"?></a>
+                </span><br/>
+                <!--(agg.:<?php echo " " . $d; ?> - tot. <?php echo " " . $tot; ?>)-->
+                <span class="style1">[ <?=$yourbrowser?> ]</span><br/>
+            </td>
             </tr>
           <tr bgcolor="#003366">
             <td height="40"><span class="style1">&nbsp;Codice</span></td>
