@@ -154,8 +154,8 @@
                 <tr>
                     <td class="style1">Quantit&agrave;</td>
                     <td colspan="2" align="center" style="color:#fff;">
-                        Da <input name="qta_da" type="number" id="qta_da" size="3"><br/> 
-                        a <input name="qta_a" type="number" id="qta_a" size="3">
+                        Da <input name="qta_da" type="number" id="qta_da" min="0" max="1000"><br/> 
+                        a <input name="qta_a" type="number" id="qta_a" min="0" max="1000">
                     </td>
                 </tr>
                 <th>
