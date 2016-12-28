@@ -133,14 +133,14 @@
                 <th>
                     <td colspan="3" class="style1">
                         <span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI</span><br/>
-                        <a href=<?="find.php?company=$company_next&company_next=$company"?>>PASSA A<?=$company_next?></a><br/>
+                        <a href=<?="find.php?company=$company_next&company_next=$company"?>>PASSA A <?=$company_next?></a><br/>
                         [ <?=$yourbrowser?> ]
                     </td>
                 </th>
                 <tr>
                     <td class="style1">Codice</td>
                     <td colspan="2" align="center">
-                        <input name="codice" type="text" id="codice">
+                        <input name="codice" type="text" id="codice" size="10">
                     </td>
                     <input type="hidden" name="company" value="<?=$company?>">
                     <input type="hidden" name="company_next" value="<?=$company_next?>">
@@ -148,7 +148,7 @@
                 <tr>
                     <td class="style1">Descrizione</td>
                     <td colspan="2" align="center">
-                        <input name="descrizione" type="text" id="descrizione">
+                        <input name="descrizione" type="text" id="descrizione" size="30">
                     </td>
                 </tr>
                 <tr>
