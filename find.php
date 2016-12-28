@@ -139,7 +139,7 @@
           <tr bgcolor="#003366">
               <td height="40"><span class="style1">&nbsp;Quantit&agrave;</span></td>
               <td height="40" colspan="2" align="center" style="color:#fff;">
-                Da <input name="qta_da" type="number" id="qta_da"> a <input name="qta_a" type="number" id="qta_a">
+                Da <input name="qta_da" type="number" id="qta_da" size="5"> a <input name="qta_a" type="number" id="qta_a" size="5">
             </td>
           </tr>
           <tr align="center" bgcolor="#003300">
