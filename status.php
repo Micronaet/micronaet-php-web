@@ -42,14 +42,17 @@
 
     // Query generation: from / to qta:
     if(!is_null($qta_da) && trim($qta_da) != ''){
-        $q .= " and dispo_lorda >= $qta_da ";
+        $q .= " and esistenza >= $qta_da ";
         }
 
     if(!is_null($qta_a) && trim($qta_a) != ''){
-        $q .= " and dispo_lorda <= $qta_a ";
+        $q .= " and esistenza <= $qta_a ";
         }
         
+    // Query generation: end the query:    
     $q .= ";";
+
+    // Query generation: run!
     $esito = $mysql->query($q);
     ?>
     <html>
