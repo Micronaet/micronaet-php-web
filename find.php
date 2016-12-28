@@ -66,15 +66,23 @@
         </script>
             <style type="text/css">
             <!--
-            body, td, th {
+            body {
                 font-family: Verdana, Arial, Helvetica, sans-serif;
                 font-size: xx-small;
                 color: #333333;
+                background-color: #FFFFFF;
+                margin-left: 0px;
+                margin-top: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
                 }
-            td {
-                height: 40px;
-                margin: 1px;
-                }    
+            table {
+                width: 350px;
+                border: 0px;
+                /*border-color: #333333;*/
+                padding: 0px;
+                border-spacing: 0px;
+                }   
             tr td {
                 background-color: #003366;
                 }    
@@ -82,20 +90,9 @@
                 background-color: #003300;
                 text-align: center;
                 } 
-            table {
-                width: 350px;
-                border: 1px;
-                border-color: #333333;
-                padding: 0px;
-                border-spacing: 0px;
-                }   
-            body {
-                background-color: #FFFFFF;
-                margin-left: 0px;
-                margin-top: 0px;
-                margin-right: 0px;
-                margin-bottom: 0px;
-                }
+            td {
+                height: 40px;
+                }    
             input {
                 font-size: x-small;
                 }
