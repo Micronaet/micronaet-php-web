@@ -73,6 +73,7 @@
                 }
             td {
                 height: 40px;
+                margin: 1px;
                 }    
             tr, tr td {
                 background-color: #003366;
