@@ -132,8 +132,8 @@
             <form name="frmCerca" method="get" action="status.php">
                 <th>
                     <td colspan="3" class="style1">
-                        <span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI</span><br/>
-                        <a href=<?="find.php?company=$company_next&company_next=$company"?>>PASSA A <?=$company_next?></a><br/>
+                        <span class="styletitle"><?=strtoupper($company)?>: RICERCA ESISTENZA PRODOTTI</span><br/>
+                        <a href=<?="find.php?company=$company_next&company_next=$company"?>>PASSA A <?=strtoupper($company_next)?></a><br/>
                         [ <?=$yourbrowser?> ]
                     </td>
                 </th>
