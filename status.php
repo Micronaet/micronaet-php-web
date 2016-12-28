@@ -48,11 +48,11 @@
     ?>
     <html>
       <head>
-        <title><?php echo $company ?> Stato materiali</title>
+        <title><?=strtoupper($company)> Stato materiali</title>
         <style type="text/css">
     <!--
     <?php
-      $browser=strtoupper($_GET["browser"]);
+      $browser = strtoupper($_GET["browser"]);
       if ($browser == "BROWSER"){
           $h_font="font-size: 13px;";
           $b_table_w="800px";
@@ -110,9 +110,9 @@
     <body>
     <table width="<?php echo $b_table_w; ?>" border="1" cellpadding="0" cellspacing="0" bordercolor="#333333">
      <tr align="center" bgcolor="#666666">
-     <td height="20"><span class="style9"><a href='<?php echo "find.php?company=$company&company_next=$company_next";?>'><?php echo "$company ";?> Ricerca:</a></span></td>
+     <td height="20"><span class="style9"><a href='<?php echo "find.php?company=$company&company_next=$company_next";?>'><?=strtoupper($company)?> Ricerca:</a></span></td>
      <td height="30" colspan="8" align="left"><span class="style9">Cod.:<?php echo strtoupper($_GET["codice"]); ?><br>
-      Desc.:<?php echo strtoupper($_GET["descrizione"]); ?></span><span class="style10"></span><span class="style10"></span></td>
+      Desc.:<?=strtoupper($_GET["descrizione"])?></span><span class="style10"></span><span class="style10"></span></td>
      </tr>
      <tr align="center" bgcolor="#003366">
       <td height="20"><span class="style13">Immagine</span></td>
