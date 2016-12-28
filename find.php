@@ -89,12 +89,12 @@
                 
             /* unvisited link */
             a:link {
-                color: green;
+                color: #00FF00;
                 }
 
             /* visited link */
             a:visited {
-                color: green;
+                color: #00FF00;
                 }
 
             /* mouse over link */
