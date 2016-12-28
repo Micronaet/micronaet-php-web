@@ -74,7 +74,7 @@
             tr {
                 background-color: #003366;
                 }    
-            th {
+            th, th>td {
                 background-color: #003300;
                 text-align: center;
                 } 
