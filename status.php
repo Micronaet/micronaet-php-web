@@ -11,8 +11,8 @@
 
     $codice = isset($_GET['codice']) ? $_GET['codice'] : null;
     $descrizione = isset($_GET['descrizione']) ? $_GET['descrizione'] : null;
-    $company = isset($_GET['company']) ? $_GET['company']: "FIA";
-    $company_next = isset($_GET['company_next']) ? $_GET['company_next']: "GPB";
+    $company = isset($_GET['company']) ? $_GET['company']: "fia";
+    $company_next = isset($_GET['company_next']) ? $_GET['company_next']: "gpb";
 
     $q = "select m.* from magazzino_$company m where 1=1 ";
     die($q);

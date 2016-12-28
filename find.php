@@ -40,8 +40,8 @@
 
     $ua = getBrowser();
     $yourbrowser = $ua['sigla'];
-    $company1 = 'FIA';
-    $company2 = 'GPB';
+    $company1 = 'fia';
+    $company2 = 'gpb';
     if (isset($_GET['company'])){
         $company = $_GET['company'];
         $company_next = $_GET['company_next'];
