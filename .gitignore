@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Micronaet: remove temp files:
+*.*~
+
 # C extensions
 *.so
 
