@@ -117,31 +117,29 @@
         <table width="350" border="1" cellpadding="0" cellspacing="0" bordercolor="#333333">
         <form name="frmCerca" method="get" action="status.php">
           <tr align="center" bgcolor="#003300">
-            <td height="40" colspan="3">
-                <span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI</span><br/>
-                <span class="style1">
-                    <a href=<?="find.php?company=$company_next&company_next=$company"?>><?="SELEZIONA $company_next"?></a>
-                </span><br/>
-                <!--(agg.:<?php echo " " . $d; ?> - tot. <?php echo " " . $tot; ?>)-->
-                <span class="style1">[ <?=$yourbrowser?> ]</span><br/>
+              <td height="40" colspan="3">
+                  <span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI</span><br/>
+                  <span class="style1">
+                      <a href=<?="find.php?company=$company_next&company_next=$company"?>><?="SELEZIONA $company_next"?></a>
+                  </span><br/>
+                  <!--(agg.:<?php echo " " . $d; ?> - tot. <?php echo " " . $tot; ?>)-->
+                  <span class="style1">[ <?=$yourbrowser?> ]</span><br/>
             </td>
-            </tr>
-          <tr bgcolor="#003366">
-            <td height="40"><span class="style1">&nbsp;Codice</span></td>
-            <td height="40" colspan="2" align="center"><input name="codice" type="text" id="codice">
-            </td>
-            <input type="hidden" name="company" value="<?=$company?>">
-            <input type="hidden" name="company_next" value="<?=$company_next?>">
           </tr>
           <tr bgcolor="#003366">
-            <td height="40"><span class="style1">&nbsp;Descrizione</span></td>
-            <td height="40" colspan="2" align="center"><input name="descrizione" type="text" id="descrizione"></td>
+              <td height="40"><span class="style1">&nbsp;Codice</span></td>
+              <td height="40" colspan="2" align="center"><input name="codice" type="text" id="codice"></td>
+              <input type="hidden" name="company" value="<?=$company?>">
+              <input type="hidden" name="company_next" value="<?=$company_next?>">
           </tr>
           <tr bgcolor="#003366">
-            <td height="40"><span class="style1">&nbsp;Quantit&agrave;</span></td>
-            <td height="40" colspan="2" align="center" style="color:#fff;">
-                Da <input name="qta_da" type="number" id="qta_da"><br />
-                a <input name="qta_a" type="number" id="qta_a">
+              <td height="40"><span class="style1">&nbsp;Descrizione</span></td>
+              <td height="40" colspan="2" align="center"><input name="descrizione" type="text" id="descrizione"></td>
+          </tr>
+          <tr bgcolor="#003366">
+              <td height="40"><span class="style1">&nbsp;Quantit&agrave;</span></td>
+              <td height="40" colspan="2" align="center" style="color:#fff;">
+                Da <input name="qta_da" type="number" id="qta_da"> a <input name="qta_a" type="number" id="qta_a">
             </td>
           </tr>
           <tr align="center" bgcolor="#003300">
