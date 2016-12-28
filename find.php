@@ -95,7 +95,7 @@ input {
 <form name="frmCerca" method="get" action="status.php">
   <tr align="center" bgcolor="#003300">
     <td height="40" colspan="3"><span class="style1"><?=$company?>: RICERCA ESISTENZA PRODOTTI
-    <br><span class="style1"><a href=<?php echo "find.php?company=$company_next&company_next=$company";?>><?php echo "Cambia in $company_next";?></a></span>
+    <br><span class="style1"><a href=<?php echo "find.php?company=$company_next&company_next=$company";?>><?="SELEZIONA $company_next"?></a></span>
     <!--(agg.:<?php echo " " . $d; ?> - tot. <?php echo " " . $tot; ?>)--><br>
     [<?php echo $yourbrowser; ?>]
 </span></td>
