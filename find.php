@@ -134,13 +134,10 @@
         <table>
             <form name="frmCerca" method="get" action="status.php">
                 <th>
-                    <td colspan="3">
+                    <td colspan="3" class="style1">
                         <span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI</span><br/>
-                        <span class="style1">
-                            <a href=<?="find.php?company=$company_next&company_next=$company"?>><?="SELEZIONA $company_next"?></a>
-                        </span><br/>
-                        <!--(agg.:<?php echo " " . $d; ?> - tot. <?php echo " " . $tot; ?>)-->
-                        <span class="style1">[ <?=$yourbrowser?> ]</span>
+                        <a href=<?="find.php?company=$company_next&company_next=$company"?>><?="SELEZIONA $company_next"?></a><br/>
+                        [ <?=$yourbrowser?> ]
                     </td>
                 </th>
                 <tr>
@@ -150,11 +147,11 @@
                     <input type="hidden" name="company_next" value="<?=$company_next?>">
                 </tr>
                 <tr>
-                    <td><span class="style1">&nbsp;Descrizione</span></td>
+                    <td class="style1">Descrizione</td>
                     <td colspan="2" align="center"><input name="descrizione" type="text" id="descrizione"></td>
                 </tr>
                 <tr>
-                    <td><span class="style1">&nbsp;Quantit&agrave;</span></td>
+                    <td class="style1">Quantit&agrave;</td>
                     <td colspan="2" align="center" style="color:#fff;">
                         Da <input name="qta_da" type="number" id="qta_da" size="5"><br/> 
                         a <input name="qta_a" type="number" id="qta_a" size="5">
