@@ -48,7 +48,7 @@
     ?>
     <html>
       <head>
-        <title><?=strtoupper($company)> Stato materiali</title>
+        <title><?=strtoupper($company)?> Stato materiali</title>
         <style type="text/css">
     <!--
     <?php
