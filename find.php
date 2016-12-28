@@ -75,10 +75,10 @@
                 height: 40px;
                 margin: 1px;
                 }    
-            tr, tr>td {
+            tr td {
                 background-color: #003366;
                 }    
-            th, th>td {
+            th td {
                 background-color: #003300;
                 text-align: center;
                 } 
@@ -136,19 +136,23 @@
                 <th>
                     <td colspan="3" class="style1">
                         <span class="styletitle"><?=$company?>: RICERCA ESISTENZA PRODOTTI</span><br/>
-                        <a href=<?="find.php?company=$company_next&company_next=$company"?>><?="PASSA A $company_next"?></a><br/>
+                        <a href=<?="find.php?company=$company_next&company_next=$company"?>>PASSA A<?=$company_next?></a><br/>
                         [ <?=$yourbrowser?> ]
                     </td>
                 </th>
                 <tr>
                     <td class="style1">Codice</td>
-                    <td colspan="2" align="center"><input name="codice" type="text" id="codice"></td>
+                    <td colspan="2" align="center">
+                        <input name="codice" type="text" id="codice">
+                    </td>
                     <input type="hidden" name="company" value="<?=$company?>">
                     <input type="hidden" name="company_next" value="<?=$company_next?>">
                 </tr>
                 <tr>
                     <td class="style1">Descrizione</td>
-                    <td colspan="2" align="center"><input name="descrizione" type="text" id="descrizione"></td>
+                    <td colspan="2" align="center">
+                        <input name="descrizione" type="text" id="descrizione">
+                    </td>
                 </tr>
                 <tr>
                     <td class="style1">Quantit&agrave;</td>
@@ -159,7 +163,7 @@
                 </tr>
                 <th>
                     <td colspan="3"><input type="submit" name="Submit" value="Cerca">
-                       <input type="hidden" name="browser" value="<?=$yourbrowser?>">
+                        <input type="hidden" name="browser" value="<?=$yourbrowser?>">
                     </td>
                 </th>
             </form>
