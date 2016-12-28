@@ -131,7 +131,7 @@
         <table>
             <form name="frmCerca" method="get" action="status.php">
                 <th>
-                    <td colspan="3" class="style1">
+                    <td colspan="2" class="style1">
                         <span class="styletitle"><?=strtoupper($company)?>: RICERCA ESISTENZA PRODOTTI</span><br/>
                         <a href=<?="find.php?company=$company_next&company_next=$company"?>>PASSA A <?=strtoupper($company_next)?></a><br/>
                         [ <?=$yourbrowser?> ]
@@ -139,7 +139,7 @@
                 </th>
                 <tr>
                     <td class="style1">Codice</td>
-                    <td colspan="2" align="center">
+                    <td align="center">
                         <input name="codice" type="text" id="codice" size="30">
                     </td>
                     <input type="hidden" name="company" value="<?=$company?>">
@@ -147,19 +147,19 @@
                 </tr>
                 <tr>
                     <td class="style1">Descrizione</td>
-                    <td colspan="2" align="center">
+                    <td align="center">
                         <input name="descrizione" type="text" id="descrizione" size="30">
                     </td>
                 </tr>
                 <tr>
                     <td class="style1">Quantit&agrave;</td>
-                    <td colspan="2" align="center" style="color:#fff;">
+                    <td align="center" style="color:#fff;">
                         Da <input name="qta_da" type="number" id="qta_da" size="3" min="0" max="1000" style="width: 6em;">
                         a <input name="qta_a" type="number" id="qta_a" size="3" min="0" max="1000" style="width: 6em;">
                     </td>
                 </tr>
                 <th>
-                    <td colspan="3"><input type="submit" name="Submit" value="Cerca">
+                    <td colspan="2"><input type="submit" name="Submit" value="Cerca">
                         <input type="hidden" name="browser" value="<?=$yourbrowser?>">
                     </td>
                 </th>
