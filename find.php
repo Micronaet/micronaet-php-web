@@ -75,10 +75,10 @@
                 height: 40px;
                 }    
             tr, tr td {
-                background-color: #003366;
+                /*background-color: #003366;*/
                 }    
             th, th td {
-                /*background-color: #003300;*/
+                background-color: #003300;
                 text-align: center;
                 } 
             table {
