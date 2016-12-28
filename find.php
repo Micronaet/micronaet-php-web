@@ -53,77 +53,20 @@
     ?>
 
     <head>
-    <meta name="viewport" content="width=device-width, user-scalable=false;">
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title><?=$company?>: Ricerca esistenza</title>
-    
-    <script language="JavaScript">
-        <!--
-            function setFocus(){
-                document.frmCerca.codice.focus();
-                }
-        // -->
+        <title><?=$company?>: Ricerca esistenza</title>    
+
+        <meta name="viewport" content="width=device-width, user-scalable=false;">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+        <link rel="stylesheet" type="text/css" href="micronaet.css">
+
+        <script language="JavaScript">
+            //<!--
+                function setFocus(){
+                    document.frmCerca.codice.focus();
+                    }
+            // -->
         </script>
-            <style type="text/css">
-            <!--
-            body {
-                font-family: Verdana, Arial, Helvetica, sans-serif;
-                font-size: xx-small;
-                color: #333333;
-                background-color: #FFFFFF;
-                margin-left: 0px;
-                margin-top: 0px;
-                margin-right: 0px;
-                margin-bottom: 0px;
-                }
-            table {
-                width: 350px;
-                border: 0px;
-                /*border-color: #333333;*/
-                padding: 0px;
-                border-spacing: 0px;
-                }
-            th {
-                background-color: #002200;
-                text-align: center;
-                } 
-            td {
-                background-color: #003366;
-                height: 40px;
-                }    
-            input {
-                font-size: x-small;
-                }
-            .style1 {
-                color: #FFFFFF;
-                font-weight: bold;
-                }
-            .styletitle {
-                color: yellow;
-                font-weight: bold;
-                }
-                
-            /* unvisited link */
-            a:link {
-                color: #00FF00;
-                }
-
-            /* visited link */
-            a:visited {
-                color: #00FF00;
-                }
-
-            /* mouse over link */
-            a:hover {
-                color: red;
-                }
-
-            /* selected link */
-            a:active {
-                color: yellow;
-                }                 
-            -->
-        </style>
     </head>
     <body onLoad="codice.focus();">
         <table>
