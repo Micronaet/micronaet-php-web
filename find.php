@@ -86,6 +86,26 @@
                 color: #FFFFFF;
                 font-weight: bold;
                 }
+                
+            /* unvisited link */
+            a:link {
+                color: green;
+                }
+
+            /* visited link */
+            a:visited {
+                color: green;
+                }
+
+            /* mouse over link */
+            a:hover {
+                color: red;
+                }
+
+            /* selected link */
+            a:active {
+                color: yellow;
+                }                 
             -->
         </style>
     </head>
