@@ -56,68 +56,88 @@
     $esito = $mysql->query($q);
     ?>
     <html>
-      <head>
-        <title><?=strtoupper($company)?> Stato materiali</title>
-        <style type="text/css">
-    <!--
-    <?php
-      $browser = strtoupper($_GET["browser"]);
-      if ($browser == "BROWSER"){
-          $h_font="font-size: 13px;";
-          $b_table_w="800px";
-          }
-      elseif ($browser == "IPHONE"){
-          $h_font="font-size: 24px;";
-          $b_table_w="100%";
-          }
-      elseif ($browser == "BB"){
-          $h_font="font-size: 9px;";
-          $b_table_w="100%";
-          }
-      else {
-          $h_font="font-size: 12px;";
-          $b_table_w="100%";
-          }
-    ?>
-
-    body,td,th {
-        <?php echo $h_font; ?>
-        color: #333333;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        }
-    td {
-        height: 20px;
-        }    
-    body {
-        background-color: #FFFFFF; 
-        margin: 0px;
-        }
-    .style9 {
-        color: #FFFFFF; 
-        font-weight: bold;
-        }
-    .style10 {color: #FFFFFF; }
-    .styleRed {color: #FF0000; }
-    .styleGreen {color: #008800;}
-    a:link {color: #FFFFFF;}
-    a:visited {color: #FFFFFF;}
-    a:hover {color: #FFFF33; }
-    a:active {color: #FFFFFF; }
-    .style13 {
-        <?php echo $h_font; ?>
-        color: #FFFFFF;
-        font-weight: bold;
-        }
-    .tr_stileP {background-color: #FFFFFF;}
-    .tr_stileD {background-color: #FFFFCC;}
-    table *{
-        color:#000;
-        font-weight:bold;
-        }
-    td {padding:2px; }
-    -->
-    </style>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
+        <head>
+            <title><?=strtoupper($company)?> Stato materiali</title>
+            <style type="text/css">
+                <!--
+                <?php
+                  $browser = strtoupper($_GET["browser"]);
+                  if ($browser == "BROWSER"){
+                      $h_font="font-size: 13px;";
+                      $b_table_w="800px";
+                      }
+                  elseif ($browser == "IPHONE"){
+                      $h_font="font-size: 24px;";
+                      $b_table_w="100%";
+                      }
+                  elseif ($browser == "BB"){
+                      $h_font="font-size: 9px;";
+                      $b_table_w="100%";
+                      }
+                  else {
+                      $h_font="font-size: 12px;";
+                      $b_table_w="100%";
+                      }
+                ?>
+                body,td,th {
+                    <?=$h_font?>
+                    color: #333333;
+                    font-family: Verdana, Arial, Helvetica, sans-serif;
+                    }
+                td {
+                    height: 20px;
+                    }    
+                body {
+                    background-color: #FFFFFF; 
+                    margin: 0px;
+                    }
+                .style9 {
+                    color: #FFFFFF; 
+                    font-weight: bold;
+                    }
+                .style10 {
+                    color: #FFFFFF; 
+                    }
+                .styleRed {
+                    color: #FF0000; 
+                    }
+                .styleGreen {
+                    color: #008800;
+                    }
+                a:link {
+                    color: #FFFFFF;
+                    }
+                a:visited {
+                    color: #FFFFFF;
+                    }
+                a:hover {
+                    color: #FFFF33; 
+                    }
+                a:active {
+                    color: #FFFFFF; 
+                    }
+                .style13 {
+                    <?php echo $h_font; ?>
+                    color: #FFFFFF;
+                    font-weight: bold;
+                    }
+                .tr_stileP {
+                    background-color: #FFFFFF;
+                    }
+                .tr_stileD {
+                    background-color: #FFFFCC;
+                    }        
+                table *{
+                    color: #000;
+                    font-weight: bold;
+                    }
+                td {
+                    padding: 2px; 
+                    }
+                -->
+            </style>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    </head>
 
     <body>
     <table width="<?php echo $b_table_w; ?>" border="1" cellpadding="0" cellspacing="0" bordercolor="#333333">
