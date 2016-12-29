@@ -4,8 +4,9 @@
     if(!session_id()) session_start();
 
     //verifico se la richiesta è nella lan locale
-    $ips = array('91.187.199.104','91.187.199.105','91.187.199.106','91.187.199.107');
+    $ips = array('91.187.199.104','91.187.199.105','91.187.199.106','91.187.199.107','79.60.135.198');
 
+    $location='Fuori sede';
     if(!isset($_SESSION['logged'])){
         if(!in_array($_SERVER['REMOTE_ADDR'],$ips)) {
             header('Location: loginmic.php');
@@ -13,6 +14,7 @@
             }
         else {
             $_SESSION['logged'] = true;
+            $location='In sede';
             }
         }
 
@@ -76,7 +78,7 @@
                     <th colspan="2" class="style1">
                         <span class="styletitle"><?=strtoupper($company)?>: RICERCA ESISTENZA PRODOTTI</span><br/>
                         <a href=<?="find.php?company=$company_next&company_next=$company"?>>PASSA A <?=strtoupper($company_next)?></a><br/>
-                        [ <?=$yourbrowser?> ]
+                        [ <?="$yourbrowser $location"?> ]
                     </th>
                 </tr>
                 <tr>
