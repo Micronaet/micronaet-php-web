@@ -6,7 +6,7 @@
     //verifico se la richiesta è nella lan locale
     $ips = array('91.187.199.104','91.187.199.105','91.187.199.106','91.187.199.107','79.60.135.198');
 
-    $location='Fuori sede';
+    $location = 'FUORI SEDE';
     if(!isset($_SESSION['logged'])){
         if(!in_array($_SERVER['REMOTE_ADDR'],$ips)) {
             header('Location: loginmic.php');
@@ -14,7 +14,7 @@
             }
         else {
             $_SESSION['logged'] = true;
-            $location='In sede';
+            $location = 'IN SEDE';
             }
         }
 
