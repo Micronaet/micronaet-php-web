@@ -9,14 +9,29 @@ $utenti[] = array(
 	'passwd' => 'campeggio',
 );
 $utenti[] = array(
-        'user' => 'arnaud',
-        'passwd' => 'Krottev3',
+    'user' => 'arnaud',
+    'passwd' => 'Krottev3',
 );
 $utenti[] = array(
-        'user' => 'lanfredi1',
-        'passwd' => 'relax',
+    'user' => 'lanfredi',
+    'passwd' => 'relax',
 );
-
+$utenti[] = array(
+    'user' => 'roberto',
+    'passwd' => 'cgp',
+);
+$utenti[] = array(
+    'user' => 'ennio',
+    'passwd' => '1956',
+);
+$utenti[] = array(
+    'user' => 'roberto',
+    'passwd' => 'cgp',
+);
+$utenti[] = array(
+    'user' => 'ufficio',
+    'passwd' => 'fiam1975',
+);
 $utenti[] = array(
 	'user' => 'giacomo',
 	'passwd' => 'fiore',
@@ -32,10 +47,6 @@ $utenti[] = array(
 $utenti[] = array(
 	'user' => 'natoli',
 	'passwd' => 'isola',
-);
-$utenti[] = array(
-	'user' => 'paladini',
-	'passwd' => 'giardino',
 );
 $utenti[] = array(
 	'user' => 'piccolo',
