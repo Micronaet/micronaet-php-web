@@ -10,18 +10,18 @@
     if(!isset($_SESSION['logged'])){
         if(!in_array($_SERVER['REMOTE_ADDR'], $ips)) {
             $location = 'FUORI SEDE';
-            $_GET['location'] = $location;
+            $_SESSION['location'] = $location;
             header('Location: loginmic.php');
             die;
             }
         else {
             $_SESSION['logged'] = true;
             $location = 'IN SEDE';
-            $_GET['location'] = $location;
+            $_SESSION['location'] = $location;
             }
         }
-    elseif (isset($_GET['location'])) {
-        $location = $_GET['location'];
+    elseif (isset($_SESSION['location'])) {
+        $location = $_SESSION['location'];
         }
 
     function getBrowser(){   
