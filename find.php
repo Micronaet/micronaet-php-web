@@ -18,6 +18,9 @@
             $location = 'IN SEDE';
             }
         }
+    elseif (isset($_GET['location'])) {
+        $location = $_GET['location'];
+        }
 
     function getBrowser(){   
         $u_agent = $_SERVER['HTTP_USER_AGENT'];
