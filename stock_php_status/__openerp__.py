@@ -36,6 +36,7 @@
     'demo': [],
     'data': [
         'php_view.xml',
+        'scheduler.xml',
         ],
     'active': False,
     'installable': True,

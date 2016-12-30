@@ -43,7 +43,7 @@ class ProductProduct(orm.Model):
     """
     _inherit = 'product.product'
 
-    def extract_web_inventory_file(self, cr, uid, context=None):
+    def extract_web_php_inventory_file(self, cr, uid, context=None):
         ''' Extract and FTP publish status file
         '''        
         def clean(value):
