@@ -43,6 +43,11 @@ class ProductProduct(orm.Model):
     """
     _inherit = 'product.product'
 
+    def product_status_publish_php(self, cr, uid, context=None):
+        ''' Override function for get prodcut selected for publish
+        '''
+        return self.search(cr, uid, [], context=context)
+        
     def extract_web_php_inventory_file(self, cr, uid, context=None):
         ''' Extract and FTP publish status file
         '''        
@@ -64,17 +69,10 @@ class ProductProduct(orm.Model):
         # ---------------------------------------------------------------------
         # Populate product in correct page
         # ---------------------------------------------------------------------
-        data = {
-            'wizard': True, # started from wizard
-            'inventory_category_id': False,#wiz_proxy.inventory_category_id.id,
-            }
+        selected_ids = product_status_publish_php(cr, uid, context=context)
+        for product in self.browse(cr, uid, selected_ids, context=context):
 
-        for product in self.stock_status_report_get_object(
-                cr, uid, data=data, context=context):
-            #if product.inventory_category_id.id not in ():# TODO manage better
-                
-            #    continue
-            f_out.write('%s|%s|%s|%s|%s|%s|%s|%s|%s|###FINERIGA###\n' % (        
+            f_out.write('%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|###FINERIGA###\n' % (        
                 product.default_code,
                 clean(product.name),
                 product.mx_net_qty,
@@ -84,6 +82,7 @@ class ProductProduct(orm.Model):
                 0,
                 product.lst_price,
                 '',
+                product.mx_lord_qty,
                 ))
                 
         # Publish via FTP and call import document        
