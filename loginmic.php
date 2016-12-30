@@ -3,6 +3,8 @@ if(!session_id()) session_start();
 
 if(isset($_POST['user']) && isset($_POST['password'])){
     $utenti = array();
+    $admin = array('roberto', 'ennio', 'ufficio');
+    
     $utenti[] = array(
 	    'user' => 'barisan',
 	    'passwd' => 'campeggio',
@@ -22,10 +24,6 @@ if(isset($_POST['user']) && isset($_POST['password'])){
     $utenti[] = array(
         'user' => 'ennio',
         'passwd' => '1956',
-    );
-    $utenti[] = array(
-        'user' => 'roberto',
-        'passwd' => 'cgp',
     );
     $utenti[] = array(
         'user' => 'ufficio',
@@ -59,6 +57,12 @@ if(isset($_POST['user']) && isset($_POST['password'])){
     foreach($utenti as $u){
 	    if($_POST['user'] == $u['user'] && $_POST['password'] == $u['passwd']) {
 		    $_SESSION['logged'] = true;
+		    if (in_array($_POST['user'], $admin) {
+		        $_SESSION['admin'] = true;		        
+		        }
+		    else {
+		        $_SESSION['admin'] = false;
+		        }    
 		    header('Location: find.php');
 		    die;
         	}
