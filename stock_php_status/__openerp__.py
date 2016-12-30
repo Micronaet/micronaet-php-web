@@ -30,6 +30,7 @@
     'depends': [
         'base',
         'inventory_field',
+        'mx_stock_status',
         ],
     'init_xml': [],
     'demo': [],

@@ -38,6 +38,57 @@ from openerp.tools import (DEFAULT_SERVER_DATE_FORMAT,
 
 _logger = logging.getLogger(__name__)
 
+class ProductProduct(orm.Model):
+    """ Model name: ProductProduct
+    """
+    _inherit = 'product.product'
+
+    def extract_web_inventory_file(self, cr, uid, context=None):
+        ''' Extract and FTP publish status file
+        '''        
+        def clean(value):
+            res = ''
+            for c in value:
+                if ord(c) < 127:
+                    res += c
+                else:
+                    res += '#'
+            return res
+                    
+        # ---------------------------------------------------------------------
+        #                        XLS log export:        
+        # ---------------------------------------------------------------------
+        filename = '/home/administrator/photo/output/magazzino.csv'
+        f_out = open(filename, 'w')
+
+        # ---------------------------------------------------------------------
+        # Populate product in correct page
+        # ---------------------------------------------------------------------
+        data = {
+            'wizard': True, # started from wizard
+            'inventory_category_id': False,#wiz_proxy.inventory_category_id.id,
+            }
+
+        for product in self.stock_status_report_get_object(
+                cr, uid, data=data, context=context):
+            #if product.inventory_category_id.id not in (): # TODO manage better
+                
+            #    continue
+            f_out.write('%s|%s|%s|%s|%s|%s|%s|%s|%s|###FINERIGA###\n' % (        
+                product.default_code,
+                clean(product.name),
+                product.mx_net_qty,
+                0,
+                0,
+                0,
+                0,
+                product.lst_price,
+                '',
+                ))
+                
+        # Publish via FTP and call import document        
+        return True    
+        
 class ResCompany(orm.Model):
     """ Model name: ResCompany
     """    
