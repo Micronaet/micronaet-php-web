@@ -71,7 +71,7 @@ class ProductProduct(orm.Model):
 
         for product in self.stock_status_report_get_object(
                 cr, uid, data=data, context=context):
-            #if product.inventory_category_id.id not in (): # TODO manage better
+            #if product.inventory_category_id.id not in ():# TODO manage better
                 
             #    continue
             f_out.write('%s|%s|%s|%s|%s|%s|%s|%s|%s|###FINERIGA###\n' % (        
