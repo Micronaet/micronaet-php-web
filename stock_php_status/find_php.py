@@ -63,13 +63,22 @@ class ProductProduct(orm.Model):
         # ---------------------------------------------------------------------
         #                        XLS log export:        
         # ---------------------------------------------------------------------
-        filename = '/home/administrator/photo/output/magazzino.csv'
-        f_out = open(filename, 'w')
+        company_proxy = self.pool.get('res.company').browse(
+            cr, uid, [1], context=context)[0] # TODO change better
+        filename = company_proxy.php_filename 
+        if not filename:
+            _logger.error('Set filename in company form!!')
+            return True
+            
+        path = '/home/administrator/photo/output'
+        fullname = os.path.join(path, filename)
+        f_out = open(fullname, 'w')
 
         # ---------------------------------------------------------------------
         # Populate product in correct page
         # ---------------------------------------------------------------------
-        selected_ids = product_status_publish_php(cr, uid, context=context)
+        selected_ids = self.product_status_publish_php(
+            cr, uid, context=context)
         for product in self.browse(cr, uid, selected_ids, context=context):
 
             f_out.write('%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|###FINERIGA###\n' % (        

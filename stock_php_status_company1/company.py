@@ -46,6 +46,12 @@ class ProductProduct(orm.Model):
     def product_status_publish_php(self, cr, uid, context=None):
         ''' Override function for get prodcut selected for publish
         '''
-        return self.search(cr, uid, [], context=context)
+        company_proxy = self.pool.get('res.company').browse(
+            cr, uid, [1], context=context)[0] # TODO change better
+        php_category_ids = [item.id for item in company_proxy.php_category_ids]
+        
+        return self.search(cr, uid, [
+            ('inventory_category_id', 'in', php_category_ids)
+            ], context=context)
         
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
