@@ -87,11 +87,11 @@ class ProductProduct(orm.Model):
                 product.mx_net_qty,
                 0,
                 0,
-                0,
+                product.mx_lord_qty,
                 0,
                 product.lst_price,
                 '',
-                product.mx_lord_qty,
+                0, # campaign
                 ))
                 
         # Publish via FTP and call import document        
