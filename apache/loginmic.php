@@ -1,7 +1,6 @@
 <?php
 if(!session_id()) session_start();
 
-$_SESSION['admin'] = false;
 if(isset($_POST['user']) && isset($_POST['password'])){
     $utenti = array();
     
@@ -70,7 +69,6 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 	    if($_POST['user'] == $u['user'] && $_POST['password'] == $u['passwd']) {
 		    $_SESSION['logged'] = true;		    
 		    $_SESSION['admin'] = $u['admin'];
-		    die("prova $_SESSION['admin']");
 		    header('Location: find.php');
 		    die;
         	}
