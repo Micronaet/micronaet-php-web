@@ -162,8 +162,8 @@
                 <td class="style13">Date arrivo</td>
 
                 <td class="style13">Costo</td>
-                <td class="style13">Costo F/magazzino</td>
                 <td class="style13">Costo F/Cliente</td>
+                <td class="style13">Costo F/magazzino</td>
                 <td class="style13">Dazi</td>
                 <td class="style13">Container</td>
 
@@ -191,8 +191,8 @@
                 $data_arrivo = $x['data_arrivo'];
 
                 $costo = number_format($x['costo'], 2, ',','');
-                $costo1 = number_format($x['costo1'], 2, ',','');
                 $costo2 = number_format($x['costo2'], 2, ',','');
+                $costo1 = number_format($x['costo1'], 2, ',','');
                 $dazi = number_format($x['dazi'], 2, ',','');
                 $container = $x['container'];
 
@@ -256,8 +256,8 @@
                     echo "<td style='background:$bgcolor;'>$data_ordine</td>";
 
                     echo "<td style='background:$bgcolor;'>$costo</td>";
-                    echo "<td style='background:$bgcolor;'>$costo1</td>";
                     echo "<td style='background:$bgcolor;'>$costo2</td>";
+                    echo "<td style='background:$bgcolor;'>$costo1</td>";
                     echo "<td style='background:$bgcolor;'>$dazi</td>";
                     echo "<td style='background:$bgcolor;'>$container</td>";
                     
