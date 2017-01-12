@@ -161,8 +161,6 @@
                 <td class="style13">Campagne</td>
                 <td class="style13">Date arrivo</td>
 
-            <!--<?php if ($_SESSION('admin')){ ?>            
-            <?php } ?>-->
                 <td class="style13">Costo</td>
                 <td class="style13">Costo F/Cliente</td>
                 <td class="style13">Costo F/magazzino</td>
