@@ -12,7 +12,10 @@
     // Read company data:
     $company = isset($_GET['company']) ? $_GET['company']: "fia";
     $company_next = isset($_GET['company_next']) ? $_GET['company_next']: "gpb";
-
+    $is_admin_text = 'AGENTE';    
+    if ($_SESSION['admin'] == true){
+        $is_admin_text = 'ADMIN';
+        }    
     //Read filter data:
     $codice = isset($_GET['codice']) ? $_GET['codice'] : null;
     $descrizione = isset($_GET['descrizione']) ? $_GET['descrizione'] : null;
@@ -145,7 +148,10 @@
                 <td class="style9">
                     <a href='<?php echo "find.php?company=$company&company_next=$company_next";?>'><?=strtoupper($company)?> Ricerca:</a>
                 </td>
-                <td colspan="15" align="left" class="style9">
+                <td colspan="14" align="left" class="style9">
+                    <?=$is_admin_text?>
+                </td>
+                <td colspan="14" align="left" class="style9">
                     Cod.: <?=strtoupper($_GET["codice"]);?> Desc.: <?=strtoupper($_GET["descrizione"])?>
                 </td>
             </tr>
