@@ -167,10 +167,10 @@
                 <td class="style13">Costo F/magazzino</td>
                 <td class="style13">Dazi</td>
                 <td class="style13">Container</td>
+                <td class="style13">Pdv 50+20</td>
             <?php } ?>
             
                 <td class="style13">Pdv</td>
-                <td class="style13">Pdv 50+20</td>
                 <!--<td class="style13">Status</td>-->
             </tr>        
              
@@ -198,8 +198,8 @@
                 $dazi = number_format($x['dazi'], 2, ',','');
                 $container = $x['container'];
 
-                $prezzo = number_format($x['prezzo'], 2, ',','');
                 $prezzo5020 = number_format($x['prezzo'] * 0.5 * 0.8, 2, ',','');
+                $prezzo = number_format($x['prezzo'], 2, ',','');
 
                 //$status = $x['status'];
                 
@@ -263,10 +263,10 @@
                         echo "<td style='background:$bgcolor;'>$costo1</td>";
                         echo "<td style='background:$bgcolor;'>$dazi</td>";
                         echo "<td style='background:$bgcolor;'>$container</td>";
+                        echo "<td style='background:$bgcolor;'>$prezzo5020</td>";
                     }
                     
                     echo "<td style='background:$bgcolor;'>$prezzo</td>";
-                    echo "<td style='background:$bgcolor;'>$prezzo5020</td>";
                     //echo "<td style='background:$bgcolor;'>$status</td>";
                 echo "</tr>";
                 $count++;
