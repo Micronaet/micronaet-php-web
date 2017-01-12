@@ -79,22 +79,35 @@ class ProductProduct(orm.Model):
         # ---------------------------------------------------------------------
         selected_ids = self.product_status_publish_php(
             cr, uid, context=context)
+        mask = '%s###FINERIGA###\n' % ('%s|' * 15) # generate mask
         for product in self.browse(cr, uid, selected_ids, context=context):
-
-            f_out.write('%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|###FINERIGA###\n' % (        
-                product.default_code,
-                clean(product.name),
-                product.mx_net_qty,
-                0,
-                0,
-                product.mx_lord_qty,
-                0,
-                product.lst_price,
-                '',
-                0, # campaign
+            container = ''
+            for transport in  product.transport_ids:
+                container += '%s ' % transport.quantity
+            dazi = ''
+            for tax in  product.duty_id.tax_ids:
+                dazi += '[%s] %s ' % (tax.country_id.code, tax.tax)
+                
+            f_out.write(mask % (        
+                product.default_code, # 1. codice
+                clean(product.name), # 2. descrizione
+                product.mx_net_mrp_qty, # 3. esistenza
+                product.mx_oc_out, # 4. sospesi_cliente
+                product.mx_of_in, # 5. ordinati
+                product.mx_lord_qty, # 6. dispo_lorda
+                product.lst_price, # 7. prezzo (calculated 50 + 20)
+                product.mx_of_date, # 8. data_arrivo
+                '', # 9. TODO status                
+                product.mx_campaign_out, # 10. campagna
+                product.standard_price, # 11. costo
+                product.customer_cost, # 12. costo1  (fco/customer)
+                product.company_cost, # 13. costo2  (fco/stock)
+                dazi, # 14. dazi 
+                container, # 15. container 
                 ))
                 
-        # Publish via FTP and call import document        
+        # Publish via FTP and call import document  
+            
         return True    
         
 class ResCompany(orm.Model):
