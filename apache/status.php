@@ -153,10 +153,23 @@
                 <td class="style13">Immagine</td>
                 <td class="style13">Codice</td>
                 <td class="style13">Descrizione</td>
-                <td class="style13">Disponibili</td>
-                <td class="style13">Impegnati clienti</td>
-                <td class="style13">Prezzo</td>
-                <td class="style13">Status</td>
+                
+                <td class="style13">Dispo netta</td>
+                <td class="style13">Dispo lorda</td>
+                <td class="style13">Ordini clienti</td>
+                <td class="style13">Campagne</td>
+                <td class="style13">Ordini fornitori</td>
+                <td class="style13">Date arrivo</td>
+
+                <td class="style13">Costo</td>
+                <td class="style13">Costo F/magazzino</td>
+                <td class="style13">Costo F/Cliente</td>
+                <td class="style13">Dazi</td>
+                <td class="style13">Container</td>
+
+                <td class="style13">Pdv</td>
+                <td class="style13">Pdv 50+20</td>
+                <!--<td class="style13">Status</td>-->
             </tr>        
              
             <?php
@@ -169,12 +182,25 @@
                 //    }
                 $codice = $x['codice'];
                 $descrizione = $x['descrizione'];
+                
                 $esistenza = $x['esistenza'];
-                //$sospesi_cliente = $x['sospesi_cliente'];
-                $ordinati = $x['ordinati'];
                 $dispo_lorda = $x['dispo_lorda'];
+                $sospesi_cliente = $x['sospesi_cliente'];
+                $campagna = $x['campagna'];
+                $ordinati = $x['ordinati'];
+                $data_arrivo = $x['data_arrivo'];
+
+                $costo = number_format($x['costo'], 2, ',','');
+                $costo1 = number_format($x['costo1'], 2, ',','');
+                $costo2 = number_format($x['costo2'], 2, ',','');
+                $dazi = number_format($x['dazi'], 2, ',','');
+                $container = $x['container'];
+
                 $prezzo = number_format($x['prezzo'], 2, ',','');
-                $status = $x['status'];
+                $prezzo5020 = number_format($x['prezzo'] * 0.5 * 0.8, 2, ',','');
+
+                //$status = $x['status'];
+                
                 /*
                 $disponibile = (float)$quantity - (float)$prenotato - (float)$campagne;
                 $bgcolor2 = '#f19393';
@@ -218,15 +244,26 @@
                     }*/
 
                 echo "<td style='background:$bgcolor;'>&nbsp;</td>";
+                
                 echo "<td style='background:$bgcolor;'>$codice</td>";
                 echo "<td style='background:$bgcolor;'>$descrizione</td>";
+                
                 echo "<td style='background:$bgcolor2;'>$esistenza</td>";
-                echo "<td style='background:$bgcolor;'>&nbsp</td>";
+                echo "<td style='background:$bgcolor;'>$dispo_lorda</td>";
+                echo "<td style='background:$bgcolor;'>$sospesi_cliente</td>";
+                echo "<td style='background:$bgcolor;'>$campagna</td>";
+                echo "<td style='background:$bgcolor;'>$ordinati</td>";
+                echo "<td style='background:$bgcolor;'>$data_ordine</td>";
+
+                echo "<td style='background:$bgcolor;'>$costo</td>";
+                echo "<td style='background:$bgcolor;'>$costo1</td>";
+                echo "<td style='background:$bgcolor;'>$costo2</td>";
+                echo "<td style='background:$bgcolor;'>$dazi</td>";
+                echo "<td style='background:$bgcolor;'>$container</td>";
+                
                 echo "<td style='background:$bgcolor;'>$prezzo</td>";
-                //echo "<td>&nbsp;</td>";
-                //echo "<td>&nbsp;</td>";
-                //echo "<td>&nbsp;</td>";
-                echo "<td style='background:$bgcolor;'>$status</td>";
+                echo "<td style='background:$bgcolor;'>$prezzo5020</td>";
+                //echo "<td style='background:$bgcolor;'>$status</td>";
                 echo "</tr>";
                 $count++;
                 }
