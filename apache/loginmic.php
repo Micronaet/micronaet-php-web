@@ -4,63 +4,72 @@ if(!session_id()) session_start();
 $_SESSION['admin'] = false;
 if(isset($_POST['user']) && isset($_POST['password'])){
     $utenti = array();
-    $admin = array('roberto', 'ennio', 'ufficio');
     
     $utenti[] = array(
 	    'user' => 'barisan',
 	    'passwd' => 'campeggio',
+	    'admin' => false,
     );
     $utenti[] = array(
         'user' => 'arnaud',
         'passwd' => 'Krottev3',
+	    'admin' => false,
     );
     $utenti[] = array(
         'user' => 'lanfredi',
         'passwd' => 'relax',
+	    'admin' => false,
     );
     $utenti[] = array(
         'user' => 'roberto',
         'passwd' => 'cgp',
+	    'admin' => true,
     );
     $utenti[] = array(
         'user' => 'ennio',
         'passwd' => '1956',
+	    'admin' => true,
     );
     $utenti[] = array(
         'user' => 'ufficio',
         'passwd' => 'fiam1975',
+	    'admin' => false,
     );
     $utenti[] = array(
 	    'user' => 'giacomo',
 	    'passwd' => 'fiore',
+	    'admin' => false,
     );
     $utenti[] = array(
 	    'user' => 'greco',
 	    'passwd' => 'atene',
+	    'admin' => false,
     );
     $utenti[] = array(
 	    'user' => 'bussetti',
 	    'passwd' => 'cotone',
+	    'admin' => false,
     );
     $utenti[] = array(
 	    'user' => 'natoli',
 	    'passwd' => 'isola',
+	    'admin' => false,
     );
     $utenti[] = array(
 	    'user' => 'piccolo',
 	    'passwd' => 'spiaggia',
+	    'admin' => false,
     );
     $utenti[] = array(
 	    'user' => 'rosaci',
 	    'passwd' => 'piscina',
+	    'admin' => false,
     );
     
     foreach($utenti as $u){
 	    if($_POST['user'] == $u['user'] && $_POST['password'] == $u['passwd']) {
-		    $_SESSION['logged'] = true;
-		    if (in_array($admin, $_POST['user'])) {
-		        $_SESSION['admin'] = true;		        
-		        }
+		    $_SESSION['logged'] = true;		    
+		    $_SESSION['admin'] = $u['admin'];
 		    header('Location: find.php');
 		    die;
         	}
