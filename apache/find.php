@@ -86,7 +86,7 @@
                     <th colspan="2" class="style1">
                         <span class="styletitle"><?=strtoupper($company)?>: RICERCA ESISTENZA PRODOTTI</span><br/>
                         <a href=<?="find.php?company=$company_next&company_next=$company"?>>PASSA A <?=strtoupper($company_next)?></a><br/>
-                        <?="[ $yourbrowser ] [ $location ] [ ]" ?>
+                        <?="[ $yourbrowser ] [ $location ] [<?=$_SESSION['admin']?>]" ?>
                     </th>
                 </tr>
                 <tr>
