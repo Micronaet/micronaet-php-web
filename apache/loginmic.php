@@ -53,16 +53,13 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 	    'user' => 'rosaci',
 	    'passwd' => 'piscina',
     );
-
+    $_SESSION['admin'] = false;
     foreach($utenti as $u){
 	    if($_POST['user'] == $u['user'] && $_POST['password'] == $u['passwd']) {
 		    $_SESSION['logged'] = true;
 		    if (in_array($_POST['user'], $admin)) {
 		        $_SESSION['admin'] = true;		        
 		        }
-		    else {
-		        $_SESSION['admin'] = false;
-		        }    
 		    header('Location: find.php');
 		    die;
         	}
