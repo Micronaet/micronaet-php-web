@@ -63,6 +63,10 @@ class ProductProduct(orm.Model):
         # ---------------------------------------------------------------------
         #                        XLS log export:        
         # ---------------------------------------------------------------------
+        if context is None:
+            context = {}
+        context['lang'] = 'it_IT'
+        
         _logger.warning('Start export PHP')
         company_proxy = self.pool.get('res.company').browse(
             cr, uid, [1], context=context)[0] # TODO change better
@@ -97,10 +101,10 @@ class ProductProduct(orm.Model):
             f_out.write(mask % (        
                 product.default_code, # 1. codice
                 clean(product.name), # 2. descrizione
-                product.mx_net_mrp_qty, # 3. esistenza
+                product.mx_net_qty, # 3. esistenza (no MRP)
                 product.mx_oc_out, # 4. sospesi_cliente
                 product.mx_of_in, # 5. ordinati
-                product.mx_lord_qty, # 6. dispo_lorda
+                product.mx_lord_qty, # 6. dispo_lorda (no MRP)
                 product.lst_price, # 7. prezzo (calculated 50 + 20)
                 product.mx_of_date, # 8. data_arrivo
                 '', # 9. TODO status                
