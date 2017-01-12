@@ -1,7 +1,7 @@
 <?php
 if(!session_id()) session_start();
 
-$_SESSION['admin'] = f alse;
+$_SESSION['admin'] = false;
 if(isset($_POST['user']) && isset($_POST['password'])){
     $utenti = array();
     $admin = array('roberto', 'ennio', 'ufficio');
