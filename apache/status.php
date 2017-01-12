@@ -148,6 +148,7 @@
                 <td class="style9">
                     <a href='<?php echo "find.php?company=$company&company_next=$company_next";?>'><?=strtoupper($company)?> Ricerca:</a>
                 </td>
+                <td colspan="1" align="left" class="style9">                
                     <?=$is_admin_text?>
                 </td>
                 <td colspan="14" align="left" class="style9">
