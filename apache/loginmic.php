@@ -57,7 +57,7 @@ if(isset($_POST['user']) && isset($_POST['password'])){
     foreach($utenti as $u){
 	    if($_POST['user'] == $u['user'] && $_POST['password'] == $u['passwd']) {
 		    $_SESSION['logged'] = true;
-		    if (in_array($_POST['admin'], $_POST['user'])) {
+		    if (in_array($admin, $_POST['user'])) {
 		        $_SESSION['admin'] = true;		        
 		        }
 		    header('Location: find.php');
