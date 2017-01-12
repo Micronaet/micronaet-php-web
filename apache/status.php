@@ -161,12 +161,14 @@
                 <td class="style13">Campagne</td>
                 <td class="style13">Date arrivo</td>
 
+            <?php if ($_SESSION('admin')){ ?>            
                 <td class="style13">Costo</td>
                 <td class="style13">Costo F/Cliente</td>
                 <td class="style13">Costo F/magazzino</td>
                 <td class="style13">Dazi</td>
                 <td class="style13">Container</td>
                 <td class="style13">Pdv 50+20</td>
+            <?php } ?>
             
                 <td class="style13">Pdv</td>
                 <!--<td class="style13">Status</td>-->
@@ -255,13 +257,14 @@
                     echo "<td style='background:$bgcolor;'>$campagna</td>";
                     echo "<td style='background:$bgcolor;'>$data_ordine</td>";
 
-                    echo "<td style='background:$bgcolor;'>$costo</td>";
-                    echo "<td style='background:$bgcolor;'>$costo2</td>";
-                    echo "<td style='background:$bgcolor;'>$costo1</td>";
-                    echo "<td style='background:$bgcolor;'>$dazi</td>";
-                    echo "<td style='background:$bgcolor;'>$container</td>";
-                    echo "<td style='background:$bgcolor;'>$prezzo5020</td>";
-                    //if ($_SESSION('admin')){}
+                    if ($_SESSION('admin')){
+                        echo "<td style='background:$bgcolor;'>$costo</td>";
+                        echo "<td style='background:$bgcolor;'>$costo2</td>";
+                        echo "<td style='background:$bgcolor;'>$costo1</td>";
+                        echo "<td style='background:$bgcolor;'>$dazi</td>";
+                        echo "<td style='background:$bgcolor;'>$container</td>";
+                        echo "<td style='background:$bgcolor;'>$prezzo5020</td>";
+                        }    
                     
                     echo "<td style='background:$bgcolor;'>$prezzo</td>";
                     //echo "<td style='background:$bgcolor;'>$status</td>";
