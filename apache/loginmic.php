@@ -5,64 +5,40 @@ if(isset($_POST['user']) && isset($_POST['password'])){
     $utenti = array();
     
     $utenti[] = array(
-	    'user' => 'barisan',
-	    'passwd' => 'campeggio',
-	    'admin' => false,
+	    'user' => 'barisan', 'passwd' => 'campeggio', 'admin' => false,
     );
     $utenti[] = array(
-        'user' => 'arnaud',
-        'passwd' => 'Krottev3',
-	    'admin' => false,
+        'user' => 'arnaud', 'passwd' => 'Krottev3', 'admin' => false,
     );
     $utenti[] = array(
-        'user' => 'lanfredi',
-        'passwd' => 'relax',
-	    'admin' => false,
+        'user' => 'lanfredi', 'passwd' => 'relax', 'admin' => false,
     );
     $utenti[] = array(
-        'user' => 'roberto',
-        'passwd' => 'cgp',
-	    'admin' => true,
+        'user' => 'roberto', 'passwd' => 'cgp', 'admin' => true,
     );
     $utenti[] = array(
-        'user' => 'ennio',
-        'passwd' => '1956',
-	    'admin' => true,
+        'user' => 'ennio', 'passwd' => '1956', 'admin' => true,
     );
     $utenti[] = array(
-        'user' => 'ufficio',
-        'passwd' => 'fiam1975',
-	    'admin' => false,
+        'user' => 'ufficio', 'passwd' => 'fiam1975', 'admin' => true,
     );
     $utenti[] = array(
-	    'user' => 'giacomo',
-	    'passwd' => 'fiore',
-	    'admin' => false,
+	    'user' => 'giacomo', 'passwd' => 'fiore', 'admin' => false,
     );
     $utenti[] = array(
-	    'user' => 'greco',
-	    'passwd' => 'atene',
-	    'admin' => false,
+	    'user' => 'greco', 'passwd' => 'atene', 'admin' => false,
     );
     $utenti[] = array(
-	    'user' => 'bussetti',
-	    'passwd' => 'cotone',
-	    'admin' => false,
+	    'user' => 'bussetti', 'passwd' => 'cotone', 'admin' => false,
     );
     $utenti[] = array(
-	    'user' => 'natoli',
-	    'passwd' => 'isola',
-	    'admin' => false,
+	    'user' => 'natoli', 'passwd' => 'isola', 'admin' => false,
     );
     $utenti[] = array(
-	    'user' => 'piccolo',
-	    'passwd' => 'spiaggia',
-	    'admin' => false,
+	    'user' => 'piccolo', 'passwd' => 'spiaggia', 'admin' => false,
     );
     $utenti[] = array(
-	    'user' => 'rosaci',
-	    'passwd' => 'piscina',
-	    'admin' => false,
+	    'user' => 'rosaci', 'passwd' => 'piscina', 'admin' => false,
     );
     $_SESSION['admin'] = true;
     foreach($utenti as $u){
