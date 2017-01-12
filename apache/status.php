@@ -161,7 +161,7 @@
                 <td class="style13">Campagne</td>
                 <td class="style13">Date arrivo</td>
 
-            <?php if ($_SESSION['admin']){ ?>            
+            <?php if ($_SESSION['admin'] = true){ ?>            
                 <td class="style13">Costo</td>
                 <td class="style13">Costo F/Cliente</td>
                 <td class="style13">Costo F/magazzino</td>
@@ -257,7 +257,7 @@
                     echo "<td style='background:$bgcolor;'>$campagna</td>";
                     echo "<td style='background:$bgcolor;'>$data_ordine</td>";
 
-                    if ($_SESSION['admin']){
+                    if ($_SESSION['admin'] = true){
                         echo "<td style='background:$bgcolor;'>$costo</td>";
                         echo "<td style='background:$bgcolor;'>$costo2</td>";
                         echo "<td style='background:$bgcolor;'>$costo1</td>";
