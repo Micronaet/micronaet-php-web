@@ -261,7 +261,7 @@
                     echo "<td style='background:$bgcolor;'>$ordinati</td>";
                     echo "<td style='background:$bgcolor;'>$sospesi_cliente</td>";
                     echo "<td style='background:$bgcolor;'>$campagna</td>";
-                    echo "<td style='background:$bgcolor;'>$data_ordine</td>";
+                    echo "<td style='background:$bgcolor;'>$data_ordine&nbsp;</td>";
 
                     if ($_GET['admin'] == true){
                         echo "<td style='background:$bgcolor;'>$costo</td>";
