@@ -63,7 +63,7 @@
         }
         
     $is_admin_text = '';    
-    if (isset($_SESSION['admin'] && $_SESSION['admin'] = true)){
+    if (isset($_SESSION['admin']) && $_SESSION['admin'] = true){
         $is_admin_text = 'ADMIN';
         }        
     ?>
