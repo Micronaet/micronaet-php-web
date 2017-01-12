@@ -61,6 +61,11 @@
         $company = $company1;
         $company_next = $company2;
         }
+    $is_admin_text = '';    
+    if (isset($_SESSION['admin'])){
+        $is_admin_text = 'ADMIN';
+        }  
+        
     ?>
 
     <head>
@@ -86,7 +91,7 @@
                     <th colspan="2" class="style1">
                         <span class="styletitle"><?=strtoupper($company)?>: RICERCA ESISTENZA PRODOTTI</span><br/>
                         <a href=<?="find.php?company=$company_next&company_next=$company"?>>PASSA A <?=strtoupper($company_next)?></a><br/>
-                        <?="[ $yourbrowser ] [ $location ] [ $_SESSION['admin'] ]" ?>
+                        <?="[ $yourbrowser ] [ $location ] [ $is_admin_text ]" ?>
                     </th>
                 </tr>
                 <tr>
