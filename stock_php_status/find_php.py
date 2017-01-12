@@ -71,6 +71,8 @@ class ProductProduct(orm.Model):
             return True
             
         path = '/home/administrator/photo/output'
+        publish = '/home/administrator/photo/output/publish.ftp.sh %s' % (
+            filename, )
         fullname = os.path.join(path, filename)
         f_out = open(fullname, 'w')
 
@@ -110,7 +112,7 @@ class ProductProduct(orm.Model):
                 ))
                 
         # Publish via FTP and call import document  
-            
+        os.system(publish)   
         return True    
         
 class ResCompany(orm.Model):
