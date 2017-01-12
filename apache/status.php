@@ -145,7 +145,7 @@
                 <td class="style9">
                     <a href='<?php echo "find.php?company=$company&company_next=$company_next";?>'><?=strtoupper($company)?> Ricerca:</a>
                 </td>
-                <td colspan="8" align="left" class="style9">
+                <td colspan="15" align="left" class="style9">
                     Cod.: <?=strtoupper($_GET["codice"]);?> Desc.: <?=strtoupper($_GET["descrizione"])?>
                 </td>
             </tr>
