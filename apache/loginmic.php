@@ -1,6 +1,7 @@
 <?php
 if(!session_id()) session_start();
 
+$_SESSION['admin'] = false;
 if(isset($_POST['user']) && isset($_POST['password'])){
     $utenti = array();
     $admin = array('roberto', 'ennio', 'ufficio');
@@ -53,7 +54,7 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 	    'user' => 'rosaci',
 	    'passwd' => 'piscina',
     );
-    $_SESSION['admin'] = false;
+    
     foreach($utenti as $u){
 	    if($_POST['user'] == $u['user'] && $_POST['password'] == $u['passwd']) {
 		    $_SESSION['logged'] = true;
