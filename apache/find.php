@@ -61,11 +61,11 @@
         $company = $company1;
         $company_next = $company2;
         }
-    $is_admin_text = '';    
-    if ($_SESSION['admin'] = true){
-        $is_admin_text = 'ADMIN';
-        }  
         
+    $is_admin_text = '';    
+    if (isset($_SESSION['admin'] && $_SESSION['admin'] = true)){
+        $is_admin_text = 'ADMIN';
+        }        
     ?>
 
     <head>
