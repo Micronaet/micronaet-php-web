@@ -13,7 +13,7 @@
     $company = isset($_GET['company']) ? $_GET['company']: "fia";
     $company_next = isset($_GET['company_next']) ? $_GET['company_next']: "gpb";
     $is_admin_text = 'AGENTE';    
-    if ($_SESSION['admin'] == true){
+    if ($_GET['admin'] == true){
         $is_admin_text = 'ADMIN';
         }    
     //Read filter data:
@@ -167,7 +167,7 @@
                 <td class="style13">Campagne</td>
                 <td class="style13">Date arrivo</td>
 
-            <?php if ($_SESSION['admin'] == true){ ?>            
+            <?php if ($_GET['admin'] == true){ ?>            
                 <td class="style13">Costo</td>
                 <td class="style13">Costo F/Cliente</td>
                 <td class="style13">Costo F/magazzino</td>
@@ -176,7 +176,7 @@
                 <td class="style13">Pdv 50+20</td>
             <?php } ?>
             
-                <td class="style13">Pdv <?=$_SESSION['admin']?></td>
+                <td class="style13">Pdv</td>
                 <!--<td class="style13">Status</td>-->
             </tr>        
              
@@ -263,7 +263,7 @@
                     echo "<td style='background:$bgcolor;'>$campagna</td>";
                     echo "<td style='background:$bgcolor;'>$data_ordine</td>";
 
-                    if ($_SESSION['admin'] == true){
+                    if ($_GET['admin'] == true){
                         echo "<td style='background:$bgcolor;'>$costo</td>";
                         echo "<td style='background:$bgcolor;'>$costo2</td>";
                         echo "<td style='background:$bgcolor;'>$costo1</td>";

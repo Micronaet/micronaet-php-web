@@ -100,6 +100,7 @@
                         <input type="hidden" name="company" value="<?=$company?>">
                         <input type="hidden" name="company_next" value="<?=$company_next?>">
                         <input type="hidden" name="browser" value="<?=$yourbrowser?>">
+                        <input type="hidden" name="admin" value="<?=$_SESSION['admin']?>">
                     </td>
                 </tr>
                 <tr>
