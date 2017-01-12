@@ -7,7 +7,6 @@
     $ips = array("91.187.199.104", "91.187.199.105", "91.187.199.106", "91.187.199.107", "79.60.135.198");
 
     $location = '-';
-    $_SESSION['admin'] = false;        
     if(!isset($_SESSION['logged'])){
         if(!in_array($_SERVER['REMOTE_ADDR'], $ips)) {
             $location = 'FUORI SEDE';
