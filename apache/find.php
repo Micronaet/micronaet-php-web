@@ -16,7 +16,7 @@
             }
         else {
             $_SESSION['logged'] = true;
-            $_SESSION['admin'] = true;        
+            $_SESSION['admin'] = true; 
             $location = 'IN SEDE';
             $_SESSION['location'] = $location;
             }

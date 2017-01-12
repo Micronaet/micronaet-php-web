@@ -64,7 +64,7 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 	    'passwd' => 'piscina',
 	    'admin' => false,
     );
-    
+    $_SESSION['admin'] = true;
     foreach($utenti as $u){
 	    if($_POST['user'] == $u['user'] && $_POST['password'] == $u['passwd']) {
 		    $_SESSION['logged'] = true;		    
