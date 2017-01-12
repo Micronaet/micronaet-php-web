@@ -83,10 +83,13 @@ class ProductProduct(orm.Model):
         for product in self.browse(cr, uid, selected_ids, context=context):
             container = ''
             for transport in  product.transport_ids:
-                container += '%s ' % transport.quantity
+                if transport.quantity:
+                    container += '%s ' % transport.quantity
+                
             dazi = ''
             for tax in  product.duty_id.tax_ids:
-                dazi += '[%s] %s ' % (tax.country_id.code, tax.tax)
+                if tax.tax: # only present
+                    dazi += '[%s] %s ' % (tax.country_id.code, tax.tax)
                 
             f_out.write(mask % (        
                 product.default_code, # 1. codice
