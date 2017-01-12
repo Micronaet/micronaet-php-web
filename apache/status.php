@@ -176,7 +176,7 @@
                 <td class="style13">Pdv 50+20</td>
             <?php } ?>
             
-                <td class="style13">Pdv <?=$_SESSION?></td>
+                <td class="style13">Pdv <?=$_SESSION['admin']?></td>
                 <!--<td class="style13">Status</td>-->
             </tr>        
              
