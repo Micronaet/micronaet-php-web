@@ -63,6 +63,7 @@ class ProductProduct(orm.Model):
         # ---------------------------------------------------------------------
         #                        XLS log export:        
         # ---------------------------------------------------------------------
+        _logger.warning('Start export PHP')
         company_proxy = self.pool.get('res.company').browse(
             cr, uid, [1], context=context)[0] # TODO change better
         filename = company_proxy.php_filename 
@@ -112,7 +113,9 @@ class ProductProduct(orm.Model):
                 ))
                 
         # Publish via FTP and call import document  
+        _logger.warning('Run %s' % publish)
         os.system(publish)   
+        _logger.warning('End export PHP')
         return True    
         
 class ResCompany(orm.Model):
