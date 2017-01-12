@@ -88,6 +88,12 @@ class ProductProduct(orm.Model):
             cr, uid, context=context)
         mask = '%s###FINERIGA###\n' % ('%s|' * 15) # generate mask
         for product in self.browse(cr, uid, selected_ids, context=context):
+            # Only present text:
+            mx_net_qty = product.mx_net_qty
+            mx_lord_qty = product.mx_lord_qty
+            if mx_net_qty <= 0 and mx_lord_qty <= 0:
+                continue
+                
             container = ''
             for transport in  product.transport_ids:
                 if transport.quantity:
@@ -101,10 +107,10 @@ class ProductProduct(orm.Model):
             f_out.write(mask % (        
                 product.default_code, # 1. codice
                 clean(product.name), # 2. descrizione
-                product.mx_net_qty, # 3. esistenza (no MRP)
+                mx_net_qty, # 3. esistenza (no MRP)
                 product.mx_oc_out, # 4. sospesi_cliente
                 product.mx_of_in, # 5. ordinati
-                product.mx_lord_qty, # 6. dispo_lorda (no MRP)
+                mx_lord_qty, # 6. dispo_lorda (no MRP)
                 product.lst_price, # 7. prezzo (calculated 50 + 20)
                 product.mx_of_date, # 8. data_arrivo
                 '', # 9. TODO status                
