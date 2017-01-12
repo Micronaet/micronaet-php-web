@@ -62,7 +62,7 @@
         $company_next = $company2;
         }
     $is_admin_text = '';    
-    if (isset($_SESSION['admin'])){
+    if ($_SESSION['admin'] = true){
         $is_admin_text = 'ADMIN';
         }  
         
