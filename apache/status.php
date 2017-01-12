@@ -257,14 +257,13 @@
                     echo "<td style='background:$bgcolor;'>$campagna</td>";
                     echo "<td style='background:$bgcolor;'>$data_ordine</td>";
 
-                    if ($_SESSION('admin')){
                         echo "<td style='background:$bgcolor;'>$costo</td>";
                         echo "<td style='background:$bgcolor;'>$costo2</td>";
                         echo "<td style='background:$bgcolor;'>$costo1</td>";
                         echo "<td style='background:$bgcolor;'>$dazi</td>";
                         echo "<td style='background:$bgcolor;'>$container</td>";
                         echo "<td style='background:$bgcolor;'>$prezzo5020</td>";
-                    }
+                    //if ($_SESSION('admin')){}
                     
                     echo "<td style='background:$bgcolor;'>$prezzo</td>";
                     //echo "<td style='background:$bgcolor;'>$status</td>";
