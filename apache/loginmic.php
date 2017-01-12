@@ -70,7 +70,7 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 	    if($_POST['user'] == $u['user'] && $_POST['password'] == $u['passwd']) {
 		    $_SESSION['logged'] = true;		    
 		    $_SESSION['admin'] = $u['admin'];
-		    die($_SESSION['admin']);
+		    die("prova $_SESSION['admin']");
 		    header('Location: find.php');
 		    die;
         	}
