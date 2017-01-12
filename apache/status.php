@@ -230,40 +230,40 @@
                 } */
 
                 echo "<tr style='background:$bgcolor;'>";
-                /*if($image != ''){
-                    echo "<td>
-                    $image
-                    <p>
-                        <a style='color:#555;' href='$image800' target='_blank'>800x800</a> |
-	                <a style='color:#555;' href='$image1200' target='_blank'>1200x1200</a> |
-	                <a style='color:#555;' href='$image2000' target='_blank'>2000x2000</a>
-                        </p>
-                 </td>";}
-                    else {
-                        echo "<td>$image</td>";
-                    }*/
+                    /*if($image != ''){
+                        echo "<td>
+                        $image
+                        <p>
+                            <a style='color:#555;' href='$image800' target='_blank'>800x800</a> |
+	                    <a style='color:#555;' href='$image1200' target='_blank'>1200x1200</a> |
+	                    <a style='color:#555;' href='$image2000' target='_blank'>2000x2000</a>
+                            </p>
+                     </td>";}
+                        else {
+                            echo "<td>$image</td>";
+                        }*/
 
-                echo "<td style='background:$bgcolor;'>&nbsp;</td>";
-                
-                echo "<td style='background:$bgcolor;'>$codice</td>";
-                echo "<td style='background:$bgcolor;'>$descrizione</td>";
-                
-                echo "<td style='background:$bgcolor2;'>$esistenza</td>";
-                echo "<td style='background:$bgcolor;'>$dispo_lorda</td>";
-                echo "<td style='background:$bgcolor;'>$sospesi_cliente</td>";
-                echo "<td style='background:$bgcolor;'>$campagna</td>";
-                echo "<td style='background:$bgcolor;'>$ordinati</td>";
-                echo "<td style='background:$bgcolor;'>$data_ordine</td>";
+                    echo "<td style='background:$bgcolor;'>&nbsp;</td>";
+                    
+                    echo "<td style='background:$bgcolor;'>$codice</td>";
+                    echo "<td style='background:$bgcolor;'>$descrizione</td>";
+                    
+                    echo "<td style='background:$bgcolor2;'>$esistenza</td>";
+                    echo "<td style='background:$bgcolor;'>$dispo_lorda</td>";
+                    echo "<td style='background:$bgcolor;'>$sospesi_cliente</td>";
+                    echo "<td style='background:$bgcolor;'>$campagna</td>";
+                    echo "<td style='background:$bgcolor;'>$ordinati</td>";
+                    echo "<td style='background:$bgcolor;'>$data_ordine</td>";
 
-                echo "<td style='background:$bgcolor;'>$costo</td>";
-                echo "<td style='background:$bgcolor;'>$costo1</td>";
-                echo "<td style='background:$bgcolor;'>$costo2</td>";
-                echo "<td style='background:$bgcolor;'>$dazi</td>";
-                echo "<td style='background:$bgcolor;'>$container</td>";
-                
-                echo "<td style='background:$bgcolor;'>$prezzo</td>";
-                echo "<td style='background:$bgcolor;'>$prezzo5020</td>";
-                //echo "<td style='background:$bgcolor;'>$status</td>";
+                    echo "<td style='background:$bgcolor;'>$costo</td>";
+                    echo "<td style='background:$bgcolor;'>$costo1</td>";
+                    echo "<td style='background:$bgcolor;'>$costo2</td>";
+                    echo "<td style='background:$bgcolor;'>$dazi</td>";
+                    echo "<td style='background:$bgcolor;'>$container</td>";
+                    
+                    echo "<td style='background:$bgcolor;'>$prezzo</td>";
+                    echo "<td style='background:$bgcolor;'>$prezzo5020</td>";
+                    //echo "<td style='background:$bgcolor;'>$status</td>";
                 echo "</tr>";
                 $count++;
                 }
