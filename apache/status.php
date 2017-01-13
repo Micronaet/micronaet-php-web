@@ -168,7 +168,7 @@
                 <td class="style13">Date arrivo</td>
 
             <?php if ($_GET['admin'] == true){ ?>            
-                <td class="style13">Costo (UM f.)</td>
+                <td class="style13">Costo um forn.)</td>
                 <td class="style13">Costo F/Cliente</td>
                 <td class="style13">Costo F/magazzino</td>
                 <td class="style13">Dazi</td>
