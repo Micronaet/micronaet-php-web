@@ -269,10 +269,10 @@
                         echo "<td style='background:$bgcolor;'>$costo1 &euro;</td>";
                         echo "<td style='background:$bgcolor;'>$dazi</td>";
                         echo "<td style='background:$bgcolor;'>$container</td>";
-                        echo "<td style='background:$bgcolor;'>$prezzo5020</td>";
+                        echo "<td style='background:$bgcolor;'>$prezzo5020 &euro;</td>";
                         }    
                     
-                    echo "<td style='background:$bgcolor;'>$prezzo</td>";
+                    echo "<td style='background:$bgcolor;'>$prezzo &euro;</td>";
                     //echo "<td style='background:$bgcolor;'>$status</td>";
                 echo "</tr>";
                 $count++;
