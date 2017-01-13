@@ -264,9 +264,9 @@
                     echo "<td style='background:$bgcolor;'>$data_ordine&nbsp;</td>";
 
                     if ($_GET['admin'] == true){
-                        echo "<td style='background:$bgcolor;'>$costo</td>";
-                        echo "<td style='background:$bgcolor;'>$costo2</td>";
-                        echo "<td style='background:$bgcolor;'>$costo1</td>";
+                        echo "<td style='background:$bgcolor;'>$costo *</td>";
+                        echo "<td style='background:$bgcolor;'>$costo2 &euro;</td>";
+                        echo "<td style='background:$bgcolor;'>$costo1 &euro;</td>";
                         echo "<td style='background:$bgcolor;'>$dazi</td>";
                         echo "<td style='background:$bgcolor;'>$container</td>";
                         echo "<td style='background:$bgcolor;'>$prezzo5020</td>";
