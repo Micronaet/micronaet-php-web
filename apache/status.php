@@ -162,10 +162,10 @@
                 
                 <td class="style13">Dispo lorda</td>
                 <td class="style13">Dispo netta</td>
-                <td class="style13">Ordini fornitori</td>
-                <td class="style13">Ordini clienti</td>
-                <td class="style13">Date arrivo</td>
                 <td class="style13">Campagne</td>
+                <td class="style13">Ordini clienti</td>
+                <td class="style13">Ordini fornitori</td>
+                <td class="style13">Date arrivo</td>
 
             <?php if ($_GET['admin'] == true){ ?>            
                 <td class="style13">Costo (um forn.)</td>
@@ -262,10 +262,10 @@
                     
                     echo "<td style='background:$bgcolor2;'>$dispo_lorda</td>";
                     echo "<td style='background:$bgcolor;'>$esistenza</td>";
-                    echo "<td style='background:$bgcolor;'>$ordinati</td>";
-                    echo "<td style='background:$bgcolor;'>$sospesi_cliente</td>";
-                    echo "<td style='background:$bgcolor;'>$data_ordine&nbsp;</td>";
                     echo "<td style='background:$bgcolor;'>$campagna</td>";
+                    echo "<td style='background:$bgcolor;'>$sospesi_cliente</td>";
+                    echo "<td style='background:$bgcolor;'>$ordinati</td>";
+                    echo "<td style='background:$bgcolor;'>$data_ordine&nbsp;</td>";
 
                     if ($_GET['admin'] == true){
                         echo "<td style='background:$bgcolor;'>$costo</td>";
