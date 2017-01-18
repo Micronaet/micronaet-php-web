@@ -124,6 +124,10 @@
                 color: #FFFFFF;
                 font-weight: bold;
                 }
+            .number {
+                <?php echo $h_font; ?>
+                text-align: right;
+                }
             .tr_stileP {
                 background-color: #FFFFFF;
                 }
@@ -264,7 +268,7 @@
                     echo "<td style='background:$bgcolor;'>$codice</td>";
                     echo "<td style='background:$bgcolor;'>$descrizione</td>";
                     
-                    echo "<td style='background:$bgcolor2;'>$dispo_lorda</td>";
+                    echo "<td style='background:$bgcolor2;' class='number'>$dispo_lorda</td>";
                     if ($_GET['admin'] == true){
                         echo "<td style='background:$bgcolor;'>$esistenza</td>";
                         }
