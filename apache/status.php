@@ -161,9 +161,13 @@
                 <td class="style13">Descrizione</td>
                 
                 <td class="style13">Dispo lorda</td>
-                <td class="style13">Dispo netta</td>
+                <?php if ($_GET['admin'] == true){ ?>            
+                    <td class="style13">Dispo netta</td>
+                <?php } ?>
                 <td class="style13">Campagne</td>
-                <td class="style13">Ordini clienti</td>
+                <?php if ($_GET['admin'] == true){ ?>            
+                    <td class="style13">Ordini clienti</td>
+                <?php } ?>
                 <td class="style13">Ordini fornitori</td>
                 <td class="style13">Date arrivo</td>
 
@@ -261,9 +265,13 @@
                     echo "<td style='background:$bgcolor;'>$descrizione</td>";
                     
                     echo "<td style='background:$bgcolor2;'>$dispo_lorda</td>";
-                    echo "<td style='background:$bgcolor;'>$esistenza</td>";
+                    if ($_GET['admin'] == true){
+                        echo "<td style='background:$bgcolor;'>$esistenza</td>";
+                        }
                     echo "<td style='background:$bgcolor;'>$campagna</td>";
-                    echo "<td style='background:$bgcolor;'>$sospesi_cliente</td>";
+                    if ($_GET['admin'] == true){
+                        echo "<td style='background:$bgcolor;'>$sospesi_cliente</td>";
+                        }
                     echo "<td style='background:$bgcolor;'>$ordinati</td>";
                     echo "<td style='background:$bgcolor;'>$data_ordine&nbsp;</td>";
 
