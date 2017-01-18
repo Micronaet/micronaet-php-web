@@ -270,25 +270,25 @@
                     
                     echo "<td style='background:$bgcolor2;' class='number'>$dispo_lorda</td>";
                     if ($_GET['admin'] == true){
-                        echo "<td style='background:$bgcolor;'>$esistenza</td>";
+                        echo "<td style='background:$bgcolor;' class='number'>$esistenza</td>";
                         }
-                    echo "<td style='background:$bgcolor;'>$campagna</td>";
+                    echo "<td style='background:$bgcolor;' class='number'>$campagna</td>";
                     if ($_GET['admin'] == true){
-                        echo "<td style='background:$bgcolor;'>$sospesi_cliente</td>";
+                        echo "<td style='background:$bgcolor;' class='number'>$sospesi_cliente</td>";
                         }
-                    echo "<td style='background:$bgcolor;'>$ordinati</td>";
+                    echo "<td style='background:$bgcolor;' class='number'>$ordinati</td>";
                     echo "<td style='background:$bgcolor;'>$data_ordine&nbsp;</td>";
 
                     if ($_GET['admin'] == true){
-                        echo "<td style='background:$bgcolor;'>$costo</td>";
-                        echo "<td style='background:$bgcolor;'>$costo2&euro;</td>";
-                        echo "<td style='background:$bgcolor;'>$costo1&euro;</td>";
+                        echo "<td style='background:$bgcolor;' class='number'>$costo</td>";
+                        echo "<td style='background:$bgcolor;' class='number'>$costo2&euro;</td>";
+                        echo "<td style='background:$bgcolor;' class='number'>$costo1&euro;</td>";
                         echo "<td style='background:$bgcolor;'>$dazi</td>";
                         echo "<td style='background:$bgcolor;'>$container</td>";
-                        echo "<td style='background:$bgcolor;'>$prezzo5020&euro;</td>";
+                        echo "<td style='background:$bgcolor;' class='number'>$prezzo5020&euro;</td>";
                         }    
                     
-                    echo "<td style='background:$bgcolor;'>$prezzo&euro;</td>";
+                    echo "<td style='background:$bgcolor;' class='number'>$prezzo&euro;</td>";
                     //echo "<td style='background:$bgcolor;'>$status</td>";
                 echo "</tr>";
                 $count++;
