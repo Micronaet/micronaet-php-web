@@ -207,9 +207,9 @@
                 $prezzo5020 = number_format($x['prezzo'] * 0.5 * 0.8, 2, ',','');
                 $prezzo = number_format($x['prezzo'], 2, ',','');
 
-                $bgcolor2 = '#00DD00';
+                $bgcolor2 = '#99FF99';
                 if ((float)$dispo_lorda <= 0){
-                    $bgcolor2 = '#DD0000';
+                    $bgcolor2 = '#FF9999';
                     }
                 //$status = $x['status'];
                 
