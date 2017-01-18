@@ -160,12 +160,12 @@
                 <td class="style13">Codice</td>
                 <td class="style13">Descrizione</td>
                 
-                <td class="style13">Dispo netta</td>
                 <td class="style13">Dispo lorda</td>
+                <td class="style13">Dispo netta</td>
                 <td class="style13">Ordini fornitori</td>
                 <td class="style13">Ordini clienti</td>
-                <td class="style13">Campagne</td>
                 <td class="style13">Date arrivo</td>
+                <td class="style13">Campagne</td>
 
             <?php if ($_GET['admin'] == true){ ?>            
                 <td class="style13">Costo (um forn.)</td>
@@ -207,6 +207,10 @@
                 $prezzo5020 = number_format($x['prezzo'] * 0.5 * 0.8, 2, ',','');
                 $prezzo = number_format($x['prezzo'], 2, ',','');
 
+                $bgcolor2 = '#004400';
+                if ((float)$dispo_lorda <= 0){
+                    $bgcolor2 = '#440000';
+                    }
                 //$status = $x['status'];
                 
                 /*
@@ -256,12 +260,12 @@
                     echo "<td style='background:$bgcolor;'>$codice</td>";
                     echo "<td style='background:$bgcolor;'>$descrizione</td>";
                     
-                    echo "<td style='background:$bgcolor2;'>$esistenza</td>";
-                    echo "<td style='background:$bgcolor;'>$dispo_lorda</td>";
+                    echo "<td style='background:$bgcolor2;'>$dispo_lorda</td>";
+                    echo "<td style='background:$bgcolor;'>$esistenza</td>";
                     echo "<td style='background:$bgcolor;'>$ordinati</td>";
                     echo "<td style='background:$bgcolor;'>$sospesi_cliente</td>";
-                    echo "<td style='background:$bgcolor;'>$campagna</td>";
                     echo "<td style='background:$bgcolor;'>$data_ordine&nbsp;</td>";
+                    echo "<td style='background:$bgcolor;'>$campagna</td>";
 
                     if ($_GET['admin'] == true){
                         echo "<td style='background:$bgcolor;'>$costo</td>";
