@@ -25,6 +25,11 @@
     // Query generation: default
     $q = "select m.* from magazzino_$company m where 1=1 ";
     
+    // Filter only product if company 1: code is 2:
+    if ($_GET['admin'] != true and $_GET['company'] == "fia"){
+        $q .= " and inventory = 2";
+        }
+        
     // Query generation: code filter:
     if(!is_null($codice) && trim($codice) != ''){
         $q .= " and trim(upper(codice)) like trim(upper('%$codice%'))";
