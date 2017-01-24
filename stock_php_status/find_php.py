@@ -86,7 +86,7 @@ class ProductProduct(orm.Model):
         # ---------------------------------------------------------------------
         selected_ids = self.product_status_publish_php(
             cr, uid, context=context)
-        mask = '%s###FINERIGA###\n' % ('%s|' * 15) # generate mask
+        mask = '%s###FINERIGA###\n' % ('%s|' * 16) # generate mask
         for product in self.browse(cr, uid, selected_ids, context=context):
             # Only present text:
             mx_net_qty = product.mx_net_qty
@@ -120,6 +120,7 @@ class ProductProduct(orm.Model):
                 product.company_cost, # 13. costo2  (fco/stock)
                 dazi, # 14. dazi 
                 container, # 15. container 
+                product.inventory_category_id.id, # 16. inventory category
                 ))
                 
         # Publish via FTP and call import document  
