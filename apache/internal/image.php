@@ -5,7 +5,7 @@
     $fp = fopen($name, 'rb');
     //if (file_exists($name)) {
         // send the right headers
-        header("Content-Type: image/jpeg");
+        header("Content-Type: image/jpg");
         //header("Content-Length: " . filesize($name));
         //fpassthru($name);
         //readfile($name);
