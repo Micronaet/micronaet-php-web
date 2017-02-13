@@ -1,6 +1,6 @@
 <?php
     // open the file in a binary mode:
-    $code = $_SESSION['code'];
+    $code = $_GET['code'];
     $name = "./images/$code.jpg";
     die($name);
     $fp = fopen($name, 'rb');
