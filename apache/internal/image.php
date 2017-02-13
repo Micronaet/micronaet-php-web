@@ -13,4 +13,3 @@
         exit;
     //    }        
 ?>
-Immagine non trovata!
