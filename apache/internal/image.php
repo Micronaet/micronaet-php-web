@@ -1,11 +1,11 @@
 <?php
     // open the file in a binary mode:
-    $name = './img/ok.png';
+    $name = './images/Varie Roberta/FOTO OK/SCONTORNATE.THUMB/541675.png';
     $fp = fopen($name, 'rb');
 
     if (file_exists($name)) {
         // send the right headers
-        header("Content-Type: image/png");
+        header("Content-Type: image/jpg");
         header("Content-Length: " . filesize($name));
 
         // dump the picture and stop the script
