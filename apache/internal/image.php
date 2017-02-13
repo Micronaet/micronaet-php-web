@@ -7,8 +7,8 @@
         // Mode 1:
         header("Content-Type: image/jpg");
         header("Content-Length: " . filesize($name));
-        //fpassthru($name);
-        readfile($name);
+        fpassthru($name);
+        //readfile($name);
         
         //Mode 3:
         //imagejpeg($name); // dump the picture and stop the script
