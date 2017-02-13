@@ -2,7 +2,7 @@
     // open the file in a binary mode:
     $code = $_GET['code'];
     $name = "images/$code.jpg";
-    $fp = fopen($name, 'rb');
+    //$fp = fopen($name, 'rb');
     if (file_exists($name)) {
         // Mode 1:
         header("Content-Type: image/jpg");
