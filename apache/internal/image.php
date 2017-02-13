@@ -3,7 +3,7 @@
     $code = $_GET['code'];
     $name = "./images/$code.jpg";
     $fp = fopen($name, 'rb');
-    //if (file_exists($name)) {
+    if (file_exists($name)) {
         // Mode 1:
         header("Content-Type: image/jpg");
         header("Content-Length: " . filesize($name));
@@ -14,5 +14,8 @@
         //imagejpeg($name); // dump the picture and stop the script
         //imagedestroy($name); // Free up memory
         exit;
-    //    }        
+        }        
+     else {
+        die("Image not found: $name");
+        }    
 ?>
