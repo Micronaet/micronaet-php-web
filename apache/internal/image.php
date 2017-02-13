@@ -1,7 +1,7 @@
 <?php
     // open the file in a binary mode:
     $code = $_GET['code'];
-    $company = S_GET['company'];
+    $company = $_GET['company'];
     
     //$name = "./immagini/$code.jpg";
     $name = "./images_$company/$code.jpg";        
