@@ -1,6 +1,6 @@
 <?php
     // open the file in a binary mode:
-    $name = './images/541675.png';
+    $name = './images/541675.jpg';
     $fp = fopen($name, 'rb');
     if (file_exists($name)) {
         // send the right headers
