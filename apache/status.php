@@ -266,7 +266,7 @@
                             echo "<td>$image</td>";
                         }*/
 
-                    echo "<td style='background:$bgcolor;'><img src='http://remote.fiam.it:15980/image.php?code=1' width="295" height="36"/></td>";
+                    echo "<td style='background:$bgcolor;'><img src='http://remote.fiam.it:15980/image.php?code=1' width='36'/></td>";
                     
                     echo "<td style='background:$bgcolor;'>$codice</td>";
                     echo "<td style='background:$bgcolor;'>$descrizione</td>";
