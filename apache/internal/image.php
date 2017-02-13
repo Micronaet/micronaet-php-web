@@ -1,7 +1,8 @@
 <?php
     // open the file in a binary mode:
     $code = $_GET['code'];
-    $name = "./immagini/$code.jpg";
+    //$name = "./immagini/$code.jpg";
+    $name = "./images/$code.jpg";
     $fp = fopen($name, 'rb');
     
     if (file_exists($name)) {
