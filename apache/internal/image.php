@@ -1,7 +1,7 @@
 <?php
     // open the file in a binary mode:
     $code = $_GET['code'];
-    $name = "./images/$code.jpg";
+    $name = "images/$code.jpg";
     $fp = fopen($name, 'rb');
     if (file_exists($name)) {
         // Mode 1:
@@ -17,5 +17,6 @@
         }        
      else {
         die("Image not found: $name");
+        //return no image logo!
         }    
 ?>
