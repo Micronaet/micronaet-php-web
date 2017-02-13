@@ -2,6 +2,7 @@
     // open the file in a binary mode:
     $code = $_SESSION['code'];
     $name = "./images/$code.jpg";
+    die($name);
     $fp = fopen($name, 'rb');
     //if (file_exists($name)) {
         // send the right headers
