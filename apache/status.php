@@ -169,13 +169,15 @@
                 <td class="style13">Codice</td>
                 <td class="style13">Descrizione</td>
                 
-                <td class="style13">Dispo lorda</td>
+                <td class="style13">Disponibili</td>
                 <?php if ($_GET['admin'] == true){ ?>            
                     <td class="style13">Dispo netta</td>
                 <?php } ?>
                 <td class="style13">Ordini fornitori</td>
                 <td class="style13">Date arrivo</td>
-                <td class="style13">Ordini clienti</td>
+                <?php if ($_GET['admin'] == true){ ?>            
+                    <td class="style13">Ordini clienti</td>
+                <?php } ?>
                 <td class="style13">Campagne</td>
 
             <?php if ($_GET['admin'] == true){ ?>            
@@ -184,10 +186,9 @@
                 <td class="style13">Costo F/magazzino</td>
                 <td class="style13">Dazi</td>
                 <td class="style13">Container</td>
-                <td class="style13">Pdv 50+20</td>
-            <?php } ?>
-            
-                <td class="style13">Pdv</td>
+                <td class="style13">Listino 50+20</td>
+            <?php } ?>            
+                <td class="style13">Prezzo di listino</td>
                 <!--<td class="style13">Status</td>-->
             </tr>        
              
@@ -203,7 +204,8 @@
                 $descrizione = $x['descrizione'];
                 
                 $esistenza = $x['esistenza'];
-                $dispo_lorda = $x['dispo_lorda'];
+                $dispo_lorda = $x['esistenza'] - $x['sospesi_cliente'];
+                //$x['dispo_lorda'];
                 $sospesi_cliente = $x['sospesi_cliente'];
                 $campagna = $x['campagna'];
                 $ordinati = $x['ordinati'];
@@ -277,7 +279,9 @@
                         }
                     echo "<td style='background:$bgcolor;' class='number'>$ordinati</td>";
                     echo "<td style='background:$bgcolor;'>$data_ordine&nbsp;</td>";
-                    echo "<td style='background:$bgcolor;' class='number'>$sospesi_cliente</td>";
+                    if ($_GET['admin'] == true){
+                        echo "<td style='background:$bgcolor;' class='number'>$sospesi_cliente</td>";
+                        }
                     echo "<td style='background:$bgcolor;' class='number'>$campagna</td>";
 
                     if ($_GET['admin'] == true){
