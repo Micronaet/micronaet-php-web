@@ -278,7 +278,7 @@
                         echo "<td style='background:$bgcolor;' class='number'>$esistenza</td>";
                         }
                     echo "<td style='background:$bgcolor;' class='number'>$ordinati</td>";
-                    echo "<td style='background:$bgcolor;'>$data_ordine&nbsp;</td>";
+                    echo "<td style='background:$bgcolor;'>$data_arrivo&nbsp;</td>";
                     if ($_GET['admin'] == true){
                         echo "<td style='background:$bgcolor;' class='number'>$sospesi_cliente</td>";
                         }
