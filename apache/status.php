@@ -63,6 +63,14 @@
     // Query generation: run!
     $esito = $mysql->query($q);
     
+    // Read datetime last update table:
+    $q_time = "SELECT UPDATE_TIME ut FROM information_schema.tables WHERE TABLE_SCHEMA = 'micronaet' AND TABLE_NAME = 'magazzino_$company'";
+    $sql_update_data = $mysql->query($q_time);
+    $last_udate = '';
+    foreach($sql_update_data as $x){
+        $last_udate = $x['ut'];
+        }
+    
     // CSS style media dependent:
     $browser = strtoupper($_GET["browser"]);
     if ($browser == "BROWSER"){
@@ -84,7 +92,7 @@
 ?>
 <html>
     <head>
-        <title><?=strtoupper($company)?> Stato materiali</title>
+        <title><?=strtoupper($company)?> Stato materiali [<?=$last_update?>]</title>
         <style type="text/css">
             <!--
             body,td,th {
