@@ -60,14 +60,21 @@ class ProductProduct(orm.Model):
                     res += '#'
             return res
                     
-        # ---------------------------------------------------------------------
-        #                        XLS log export:        
-        # ---------------------------------------------------------------------
+        _logger.warning('Start export PHP')
         if context is None:
             context = {}
         context['lang'] = 'it_IT'
         
-        _logger.warning('Start export PHP')
+        # Enable inventory status:
+        _logger.info('Enable inventory status for read stock')
+        user_pool = self.pool.get('res.users')
+        user_pool.write(cr, uid, uid, {
+            'no_inventory_status': False, 
+            }, context=context)            
+        
+        # ---------------------------------------------------------------------
+        #                        XLS log export:        
+        # ---------------------------------------------------------------------
         company_proxy = self.pool.get('res.company').browse(
             cr, uid, [1], context=context)[0] # TODO change better
         filename = company_proxy.php_filename 
