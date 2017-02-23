@@ -64,12 +64,12 @@
     $esito = $mysql->query($q);
     
     // Read datetime last update table:
-    $q_time = "SELECT UPDATE_TIME ut FROM information_schema.tables WHERE TABLE_SCHEMA = 'micronaet' AND TABLE_NAME = 'magazzino_$company'";
-    $sql_update_data = $mysql->query($q_time);
+    //$q_time = "SELECT UPDATE_TIME ut FROM information_schema.tables WHERE TABLE_SCHEMA = 'micronaet' AND TABLE_NAME = 'magazzino_$company';";
+    //$sql_update_data = $mysql->query($q_time);
     $last_udate = '';
-    foreach($sql_update_data as $x){
-        $last_udate = $x['ut'];
-        }
+    //foreach($sql_update_data as $x){
+    //    $last_udate = $x['ut'];
+    //    }
     
     // CSS style media dependent:
     $browser = strtoupper($_GET["browser"]);
