@@ -110,7 +110,10 @@ class ProductProduct(orm.Model):
             for tax in  product.duty_id.tax_ids:
                 if tax.tax: # only present
                     dazi += '[%s] %s ' % (tax.country_id.code, tax.tax)
-                
+            try:
+                mx_campaign_out = product.mx_campaign_out
+            except:
+                mx_campaign_out = 0.0 # no manage campaign
             f_out.write(mask % (        
                 product.default_code, # 1. codice
                 clean(product.name), # 2. descrizione
@@ -121,7 +124,7 @@ class ProductProduct(orm.Model):
                 product.lst_price, # 7. prezzo (calculated 50 + 20)
                 product.mx_of_date, # 8. data_arrivo
                 '', # 9. TODO status                
-                product.mx_campaign_out, # 10. campagna
+                mx_campaign_out, # 10. campagna
                 product.standard_price, # 11. costo
                 product.customer_cost, # 12. costo1  (fco/customer)
                 product.company_cost, # 13. costo2  (fco/stock)
