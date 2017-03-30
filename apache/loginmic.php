@@ -47,6 +47,15 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 	    'user' => 'dispo', 'passwd' => 'fiamgpb', 'admin' => false,
     );
     $utenti[] = array(
+	    'user' => 'covadonga', 'passwd' => '#Avoc753@', 'admin' => false,
+    );
+    $utenti[] = array(
+	    'user' => 'gwm', 'passwd' => '#GWM753@', 'admin' => false,
+    );
+    $utenti[] = array(
+	    'user' => 'robin', 'passwd' => '#Ober753@', 'admin' => false,
+    );
+    $utenti[] = array(
 	    'user' => 'hanne', 'passwd' => 'HCebbesen', 'admin' => false,
     );
     $_SESSION['admin'] = true;
