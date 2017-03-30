@@ -116,7 +116,7 @@ class ProductProduct(orm.Model):
                 mx_campaign_out = 0.0 # no manage campaign
             f_out.write(mask % (        
                 product.default_code, # 1. codice
-                clean(product.name), # 2. descrizione
+                clean('%s %s' % (product.name, product.colour or '')), # 2. descrizione
                 mx_net_qty, # 3. esistenza (no MRP)
                 product.mx_oc_out, # 4. sospesi_cliente
                 product.mx_of_in, # 5. ordinati
