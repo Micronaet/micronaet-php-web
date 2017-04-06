@@ -92,7 +92,7 @@
 ?>
 <html>
     <head>
-        <title><?=strtoupper($company)?> Stato materiali [<?=$last_update?>]</title>
+        <title><?=strtoupper($company)?> Stato materiali [<?=$last_update?>] <?=$_SESSION['shop']?></title>
         <style type="text/css">
             <!--
             body,td,th {

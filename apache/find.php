@@ -19,6 +19,13 @@
             $_SESSION['admin'] = true; 
             $location = 'IN SEDE';
             $_SESSION['location'] = $location;
+            if (isset($_GET['shop'])){ //shop mode
+                $_SESSION['shop'] = true;
+                }
+            else {
+                $_SESSION['shop'] = false;
+                }    
+            
             }
         }
     elseif (isset($_SESSION['location'])) {
