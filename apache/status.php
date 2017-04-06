@@ -190,12 +190,12 @@
                 <td class="style13">Campagne</td>
 
             <?php if ($_GET['admin'] == true){ ?>            
-                <td class="style13">Costo (um forn.)</td>
-                <td class="style13">Costo F/magazzino</td>
-                <td class="style13">Costo F/Cliente</td>
-                <td class="style13">Dazi</td>
-                <td class="style13">Container</td>
                 <?php if ($shop == false){ ?>            
+                    <td class="style13">Costo (um forn.)</td>
+                    <td class="style13">Costo F/magazzino</td>
+                    <td class="style13">Costo F/Cliente</td>
+                    <td class="style13">Dazi</td>
+                    <td class="style13">Container</td>
                     <td class="style13">Listino 50+20</td>
                 <?php } ?>            
             <?php } ?>            
