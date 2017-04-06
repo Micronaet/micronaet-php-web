@@ -21,6 +21,7 @@
     $descrizione = isset($_GET['descrizione']) ? $_GET['descrizione'] : null;
     $qta_da = isset($_GET['qta_da']) && trim($_GET['qta_da']) != '' ? (int)$_GET['qta_da'] : null;
     $qta_a = isset($_GET['qta_a']) && trim($_GET['qta_a']) != '' ? (int)$_GET['qta_a'] : null;
+    $shop = isset($_GET['shop']) ? $_GET['shop'] : null;
 
     // Query generation: default
     $q = "select m.* from magazzino_$company m where 1=1 ";
@@ -92,7 +93,7 @@
 ?>
 <html>
     <head>
-        <title><?=strtoupper($company)?> Stato materiali [<?=$last_update?>] <?=$_GET['shop']?></title>
+        <title><?=strtoupper($company)?> Stato materiali [<?=$last_update?>]</title>
         <style type="text/css">
             <!--
             body,td,th {
@@ -163,7 +164,7 @@
         <table width="<?php echo $b_table_w; ?>" border="1" cellpadding="0" cellspacing="0" bordercolor="#333333">
             <tr align="center" bgcolor="#666666">
                 <td class="style9">
-                    <a href='<?php echo "find.php?company=$company&company_next=$company_next";?>'><?=strtoupper($company)?> Ricerca:<?=$_GET['shop']?></a>
+                    <a href='<?php echo "find.php?shop=$shop&company=$company&company_next=$company_next";?>'><?=strtoupper($company)?> Ricerca:<?=$_GET['shop']?></a>
                 </td>
                 <td colspan="1" align="left" class="style9">                
                     <?=$is_admin_text?>

@@ -24,8 +24,7 @@
                 }
             else {
                 $_SESSION['shop'] = false;
-                }    
-            
+                }            
             }
         }
     elseif (isset($_SESSION['location'])) {
