@@ -7,7 +7,7 @@
     $ips = array("91.187.199.104", "91.187.199.105", "91.187.199.106", "91.187.199.107", "79.60.135.198");
 
     $location = '-';
-    $shop = isset($_GET['shop']) ? $_GET['shop'] : null;
+    $shop = isset($_GET['shop']) ? $_GET['shop'] == 't' : false;
 
     if(!isset($_SESSION['logged'])){
         if(!in_array($_SERVER['REMOTE_ADDR'], $ips)) {
@@ -21,12 +21,6 @@
             $_SESSION['admin'] = true; 
             $location = 'IN SEDE';
             $_SESSION['location'] = $location;
-            /*if (isset($_GET['shop'])){ //shop mode
-                $_SESSION['shop'] = true;
-                }
-            else {
-                $_SESSION['shop'] = false;
-                }            */
             }
         }
     elseif (isset($_SESSION['location'])) {
