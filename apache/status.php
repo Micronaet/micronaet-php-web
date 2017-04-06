@@ -303,10 +303,14 @@
                         echo "<td style='background:$bgcolor;' class='number'>$costo1&euro;</td>";
                         echo "<td style='background:$bgcolor;'>$dazi</td>";
                         echo "<td style='background:$bgcolor;'>$container</td>";
-                        echo "<td style='background:$bgcolor;' class='number'>$prezzo5020&euro;</td>";
+                        if ($shop == false){
+                            echo "<td style='background:$bgcolor;' class='number'>$prezzo5020&euro;</td>";
+                        }
                         }    
                     
-                    echo "<td style='background:$bgcolor;' class='number'>$prezzo&euro;</td>";
+                    if ($shop == false){
+                        echo "<td style='background:$bgcolor;' class='number'>$prezzo&euro;</td>";
+                        }
                     //echo "<td style='background:$bgcolor;'>$status</td>";
                 echo "</tr>";
                 $count++;
