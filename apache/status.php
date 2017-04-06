@@ -189,19 +189,17 @@
                 <?php } ?>
                 <td class="style13">Campagne</td>
 
-            <?php if ($_GET['admin'] == true){ ?>            
+            <?php if ($_GET['admin'] == true) and ($shop == false) { ?>            
                 <td class="style13">Costo (um forn.)</td>
                 <td class="style13">Costo F/magazzino</td>
                 <td class="style13">Costo F/Cliente</td>
                 <td class="style13">Dazi</td>
                 <td class="style13">Container</td>
-                <?php if ($shop == false){ ?>            
                     <td class="style13">Listino 50+20</td>
-                <?php } ?>            
             <?php } ?>            
-                <?php if ($shop == false){ ?>            
-                    <td class="style13">Prezzo di listino</td>
-                <?php } ?>            
+            <?php if ($shop == false){ ?>            
+                <td class="style13">Prezzo di listino</td>
+            <?php } ?>            
                 <!--<td class="style13">Status</td>-->
             </tr>        
              
@@ -297,16 +295,14 @@
                         }
                     echo "<td style='background:$bgcolor;' class='number'>$campagna</td>";
 
-                    if ($_GET['admin'] == true){
+                    if ($_GET['admin'] == true) and ($shop == false){
                         echo "<td style='background:$bgcolor;' class='number'>$costo</td>";
                         echo "<td style='background:$bgcolor;' class='number'>$costo2&euro;</td>";
                         echo "<td style='background:$bgcolor;' class='number'>$costo1&euro;</td>";
                         echo "<td style='background:$bgcolor;'>$dazi</td>";
                         echo "<td style='background:$bgcolor;'>$container</td>";
-                        if ($shop == false){
-                            echo "<td style='background:$bgcolor;' class='number'>$prezzo5020&euro;</td>";
+                        echo "<td style='background:$bgcolor;' class='number'>$prezzo5020&euro;</td>";
                         }
-                        }    
                     
                     if ($shop == false){
                         echo "<td style='background:$bgcolor;' class='number'>$prezzo&euro;</td>";
