@@ -164,7 +164,7 @@
         <table width="<?php echo $b_table_w; ?>" border="1" cellpadding="0" cellspacing="0" bordercolor="#333333">
             <tr align="center" bgcolor="#666666">
                 <td class="style9">
-                    <a href='<?php echo "find.php?shop=$shop&company=$company&company_next=$company_next";?>'><?=strtoupper($company)?> Ricerca:<?=$_GET['shop']?></a>
+                    <a href='<?php echo "find.php?shop=$shop&company=$company&company_next=$company_next";?>'><?=strtoupper($company)?> Ricerca:</a>
                 </td>
                 <td colspan="1" align="left" class="style9">                
                     <?=$is_admin_text?>

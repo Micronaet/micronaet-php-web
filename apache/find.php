@@ -7,6 +7,8 @@
     $ips = array("91.187.199.104", "91.187.199.105", "91.187.199.106", "91.187.199.107", "79.60.135.198");
 
     $location = '-';
+    $shop = isset($_GET['shop']) ? $_GET['shop'] : null;
+
     if(!isset($_SESSION['logged'])){
         if(!in_array($_SERVER['REMOTE_ADDR'], $ips)) {
             $location = 'FUORI SEDE';
@@ -19,12 +21,12 @@
             $_SESSION['admin'] = true; 
             $location = 'IN SEDE';
             $_SESSION['location'] = $location;
-            if (isset($_GET['shop'])){ //shop mode
+            /*if (isset($_GET['shop'])){ //shop mode
                 $_SESSION['shop'] = true;
                 }
             else {
                 $_SESSION['shop'] = false;
-                }            
+                }            */
             }
         }
     elseif (isset($_SESSION['location'])) {
@@ -95,7 +97,7 @@
                 <tr>
                     <th colspan="2" class="style1">
                         <span class="styletitle"><?=strtoupper($company)?>: RICERCA ESISTENZA PRODOTTI</span><br/>
-                        <a href=<?="find.php?company=$company_next&company_next=$company"?>>PASSA A <?=strtoupper($company_next)?></a><br/>
+                        <a href=<?="find.php?shop=$shop&company=$company_next&company_next=$company"?>>PASSA A <?=strtoupper($company_next)?></a><br/>
                         <?="[ $yourbrowser ] [ $location ] [ $is_admin_text ]" ?>
                     </th>
                 </tr>
