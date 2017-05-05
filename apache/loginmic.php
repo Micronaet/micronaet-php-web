@@ -8,6 +8,12 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 	    'user' => 'barisan', 'passwd' => 'campeggio', 'admin' => false,
     );
     $utenti[] = array(
+	    'user' => 'eventi', 'passwd' => 'itneve157!', 'admin' => false,
+    );
+    $utenti[] = array(
+	    'user' => 'tisti', 'passwd' => 'itsit357!', 'admin' => false,
+    );
+    $utenti[] = array(
         'user' => 'arnaud', 'passwd' => 'Krottev3', 'admin' => false,
     );
     $utenti[] = array(
