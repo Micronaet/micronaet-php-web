@@ -12,9 +12,9 @@
     // Read company data:
     $company = isset($_GET['company']) ? $_GET['company']: "fia";
     $company_next = isset($_GET['company_next']) ? $_GET['company_next']: "gpb";
-    $is_admin_text = 'AGENTE';    
-    if ($_GET['admin'] == true){
-        $is_admin_text = 'ADMIN';
+    $is_root_text = 'AGENTE';    
+    if ($_GET['root'] == true){
+        $is_root_text = 'ADMIN';
         }    
     //Read filter data:
     $codice = isset($_GET['codice']) ? $_GET['codice'] : null;
@@ -27,7 +27,7 @@
     $q = "select m.* from magazzino_$company m where 1=1 ";
     
     // Filter only product if company 1: code is 2:
-    if ($_GET['admin'] != true and $_GET['company'] == "fia"){
+    if ($_GET['root'] != true and $_GET['company'] == "fia"){
         $q .= " and inventory = 2";
         }
         
@@ -167,7 +167,7 @@
                     <a href='<?php echo "find.php?shop=$shop&company=$company&company_next=$company_next";?>'><?=strtoupper($company)?> Ricerca:</a>
                 </td>
                 <td colspan="1" align="left" class="style9">                
-                    <?=$is_admin_text?>
+                    <?=$is_root_text?>
                 </td>
                 <td colspan="14" align="left" class="style9">
                     Cod.: <?=strtoupper($_GET["codice"]);?> Desc.: <?=strtoupper($_GET["descrizione"])?>
@@ -179,17 +179,17 @@
                 <td class="style13">Descrizione</td>
                 
                 <td class="style13">Disponibili</td>
-                <?php if ($_GET['admin'] == true){ ?>            
+                <?php if ($_GET['root'] == true){ ?>            
                     <td class="style13">Dispo netta</td>
                 <?php } ?>
                 <td class="style13">Ordini fornitori</td>
                 <td class="style13">Date arrivo</td>
-                <?php if ($_GET['admin'] == true){ ?>            
+                <?php if ($_GET['root'] == true){ ?>            
                     <td class="style13">Ordini clienti</td>
                 <?php } ?>
                 <td class="style13">Campagne</td>
 
-            <?php if ($_GET['admin'] == true){ ?>            
+            <?php if ($_GET['root'] == true){ ?>            
                 <?php if ($shop == false){ ?>            
                     <td class="style13">Costo (um forn.)</td>
                     <td class="style13">Costo F/magazzino</td>
@@ -287,17 +287,17 @@
                     echo "<td style='background:$bgcolor;'>$descrizione</td>";
                     
                     echo "<td style='background:$bgcolor2;' class='number'>$dispo_lorda</td>";
-                    if ($_GET['admin'] == true){
+                    if ($_GET['root'] == true){
                         echo "<td style='background:$bgcolor;' class='number'>$esistenza</td>";
                         }
                     echo "<td style='background:$bgcolor;' class='number'>$ordinati</td>";
                     echo "<td style='background:$bgcolor;'>$data_arrivo&nbsp;</td>";
-                    if ($_GET['admin'] == true){
+                    if ($_GET['root'] == true){
                         echo "<td style='background:$bgcolor;' class='number'>$sospesi_cliente</td>";
                         }
                     echo "<td style='background:$bgcolor;' class='number'>$campagna</td>";
 
-                    if ($_GET['admin'] == true){
+                    if ($_GET['root'] == true){
                         if ($shop == false){
                             echo "<td style='background:$bgcolor;' class='number'>$costo</td>";
                             echo "<td style='background:$bgcolor;' class='number'>$costo2&euro;</td>";

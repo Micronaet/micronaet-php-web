@@ -18,7 +18,7 @@
             }
         else {
             $_SESSION['logged'] = true;
-            $_SESSION['admin'] = true; 
+            $_SESSION['root'] = true; 
             $location = 'IN SEDE';
             $_SESSION['location'] = $location;
             }
@@ -63,9 +63,9 @@
         $company_next = $company2;
         }
         
-    $is_admin_text = 'AGENTE';    
-    if ($_SESSION['admin'] == true){
-        $is_admin_text = 'ADMIN';
+    $is_root_text = 'AGENTE';    
+    if ($_SESSION['root'] == true){
+        $is_root_text = 'ADMIN';
         }        
     ?>
 
@@ -92,7 +92,7 @@
                     <th colspan="2" class="style1">
                         <span class="styletitle"><?=strtoupper($company)?>: RICERCA ESISTENZA PRODOTTI</span><br/>
                         <a href=<?="find.php?shop=$shop&company=$company_next&company_next=$company"?>>PASSA A <?=strtoupper($company_next)?></a><br/>
-                        <?="[ $yourbrowser ] [ $location ] [ $is_admin_text ]" ?>
+                        <?="[ $yourbrowser ] [ $location ] [ $is_root_text ]" ?>
                     </th>
                 </tr>
                 <tr>
@@ -102,7 +102,7 @@
                         <input type="hidden" name="company" value="<?=$company?>">
                         <input type="hidden" name="company_next" value="<?=$company_next?>">
                         <input type="hidden" name="browser" value="<?=$yourbrowser?>">
-                        <input type="hidden" name="admin" value="<?=$_SESSION['admin']?>">
+                        <input type="hidden" name="root" value="<?=$_SESSION['root']?>">
                         <input type="hidden" name="shop" value="<?=$shop?>">
                     </td>
                 </tr>
