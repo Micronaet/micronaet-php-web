@@ -4,7 +4,8 @@
     if(!session_id()) session_start();
 
     //verifico se la richiesta è nella lan locale
-    $ips = array("91.187.199.104", "91.187.199.105", "91.187.199.106", "91.187.199.107", "79.60.135.198");
+    $ips = array("91.187.199.104", "91.187.199.105", "91.187.199.106", "91.187.199.107");
+    //"79.60.135.198") // Micronaet
 
     $location = '-';
     $shop = isset($_GET['shop']) ? $_GET['shop'] == '1' : '0';
