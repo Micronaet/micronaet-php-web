@@ -190,7 +190,7 @@
                 <td class="style13">Campagne</td>
 
             <?php if ($_GET['root'] == true){ ?>            
-                <?php if ($shop == "1"){ ?>            
+                <?php if ($shop != "1"){ ?>            
                     <td class="style13">Costo (um forn.)</td>
                     <td class="style13">Costo F/magazzino</td>
                     <td class="style13">Costo F/Cliente</td>
@@ -199,10 +199,7 @@
                     <td class="style13">Listino 50+20</td>
                 <?php } ?>            
             <?php } ?>            
-                <?php if ($shop != "1"){ ?>            
-                    <td class="style13">Prezzo di listino</td>
-                <?php } ?>            
-                <!--<td class="style13">Status</td>-->
+                <td class="style13">Prezzo di listino</td>
             </tr>        
              
             <?php
@@ -298,7 +295,7 @@
                     echo "<td style='background:$bgcolor;' class='number'>$campagna</td>";
 
                     if ($_GET['root'] == true){
-                        if ($shop == false){
+                        if ($shop != "1"){
                             echo "<td style='background:$bgcolor;' class='number'>$costo</td>";
                             echo "<td style='background:$bgcolor;' class='number'>$costo2&euro;</td>";
                             echo "<td style='background:$bgcolor;' class='number'>$costo1&euro;</td>";
@@ -306,11 +303,8 @@
                             echo "<td style='background:$bgcolor;'>$container</td>";
                             echo "<td style='background:$bgcolor;' class='number'>$prezzo5020&euro;</td>";
                         }}
-                    
-                    if ($shop == false){
+                                            
                         echo "<td style='background:$bgcolor;' class='number'>$prezzo&euro;</td>";
-                        }
-                    //echo "<td style='background:$bgcolor;'>$status</td>";
                 echo "</tr>";
                 $count++;
                 }
