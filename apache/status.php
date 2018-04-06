@@ -190,7 +190,7 @@
                 <td class="style13">Campagne</td>
 
             <?php if ($_GET['root'] == true){ ?>            
-                <?php if ($shop == false){ ?>            
+                <?php if ($shop == "1"){ ?>            
                     <td class="style13">Costo (um forn.)</td>
                     <td class="style13">Costo F/magazzino</td>
                     <td class="style13">Costo F/Cliente</td>
@@ -199,7 +199,7 @@
                     <td class="style13">Listino 50+20</td>
                 <?php } ?>            
             <?php } ?>            
-                <?php if ($shop == false){ ?>            
+                <?php if ($shop != "1"){ ?>            
                     <td class="style13">Prezzo di listino</td>
                 <?php } ?>            
                 <!--<td class="style13">Status</td>-->
