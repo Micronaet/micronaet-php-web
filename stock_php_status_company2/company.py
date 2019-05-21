@@ -44,7 +44,7 @@ class ProductProduct(orm.Model):
     _inherit = 'product.product'
 
     def product_status_publish_php(self, cr, uid, context=None):
-        ''' Override function for get prodcut selected for publish
+        ''' Override function for get product selected for publish
         '''
         return self.search(cr, uid, [], context=context)
         

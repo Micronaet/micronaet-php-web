@@ -96,8 +96,9 @@ class ProductProduct(orm.Model):
         mask = '%s###FINERIGA###\n' % ('%s|' * 16) # generate mask
         for product in self.browse(cr, uid, selected_ids, context=context):
             # Only present text:
-            mx_net_qty = product.mx_net_qty
-            mx_lord_qty = product.mx_lord_qty
+            mx_mrp_out = product.mx_mrp_out # out for production
+            mx_net_qty = product.mx_net_qty - mx_mrp_out
+            mx_lord_qty = product.mx_lord_qty - mx_mrp_out
             if mx_net_qty <= 0 and mx_lord_qty <= 0:
                 continue
                 
