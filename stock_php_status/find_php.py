@@ -92,16 +92,16 @@ class ProductProduct(orm.Model):
             return True
             
         path = '/home/administrator/photo/output'
-        publish = '/home/administrator/photo/output/publish.ftp.sh %s' % (
-            filename, )
+        excel_filename = os.path.join(path, '%s.xlsx' % cr.dbname)    
+
+        publish = '%s/publish.excel.ftp.sh %s %s' % (
+            path, filename, excel_filename)
         fullname = os.path.join(path, filename)        
         f_out = open(fullname, 'w')
 
         # ---------------------------------------------------------------------
         # Excel file:
         # ---------------------------------------------------------------------
-        excel_filename = os.path.join(path, '%s.xlsx' % cr.dbname)    
-
         ws_name = 'Stato Magazzino'
         excel_pool.create_worksheet(ws_name)
         excel_pool.set_format()
