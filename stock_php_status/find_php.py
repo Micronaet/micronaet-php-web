@@ -43,6 +43,11 @@ class ProductProduct(orm.Model):
     """
     _inherit = 'product.product'
 
+    def check_excel_export(self, product):
+        ''' Override function for get product select for excel
+        '''
+        return True
+
     def product_status_publish_php(self, cr, uid, context=None):
         ''' Override function for get prodcut selected for publish
         '''
@@ -65,9 +70,13 @@ class ProductProduct(orm.Model):
             context = {}
         context['lang'] = 'it_IT'
         
+        # Pool used:
+        excel_pool = self.pool.get('excel.writer')
+        user_pool = self.pool.get('res.users')
+        
+        
         # Enable inventory status:
         _logger.info('Enable inventory status for read stock')
-        user_pool = self.pool.get('res.users')
         user_pool.write(cr, uid, uid, {
             'no_inventory_status': False, 
             }, context=context)            
@@ -85,8 +94,49 @@ class ProductProduct(orm.Model):
         path = '/home/administrator/photo/output'
         publish = '/home/administrator/photo/output/publish.ftp.sh %s' % (
             filename, )
-        fullname = os.path.join(path, filename)
+        fullname = os.path.join(path, filename)        
         f_out = open(fullname, 'w')
+
+        # ---------------------------------------------------------------------
+        # Excel file:
+        # ---------------------------------------------------------------------
+        excel_filename = os.path.join(path, '%s.xlsx' % cr.dbname)    
+
+        ws_name = 'Stato Magazzino'
+        excel_pool.create_worksheet(ws_name)
+        excel_pool.set_format()
+        excel_format = {
+            'title': excel_pool.get_format('title'),
+            'header': excel_pool.get_format('header'),
+            'text': {
+                'white': excel_pool.get_format('text'),
+                'red': excel_pool.get_format('bg_red'),
+                'green': excel_pool.get_format('bg_green'),
+                },
+            'number': {
+                'white': excel_pool.get_format('number'),
+                'red': excel_pool.get_format('bg_red_number'),
+                'green': excel_pool.get_format('bg_green_number'),
+                },
+            }
+
+        # ---------------------------------------------------------------------
+        # Write header:
+        # ---------------------------------------------------------------------
+        excel_pool.column_width(ws_name, (
+            5, 15, 40, 10, 15, 20, 10, 15,
+            ))
+
+        row = 0
+        excel_pool.write_xls_line(ws_name, row, (
+            'Stato magazzino: %s' % datetime.now(),
+            ), default_format=excel_format['title'])
+
+        row += 1
+        excel_pool.write_xls_line(ws_name, row, (
+            'Immagine', 'Codice', 'Descrizione', 'Disponibili', 
+            'Ordini fornitori', 'Date arrivo', 'Campagne', 'Prezzo listino',            
+            ), default_format=excel_format['header'])
 
         # ---------------------------------------------------------------------
         # Populate product in correct page
@@ -115,9 +165,10 @@ class ProductProduct(orm.Model):
                 mx_campaign_out = product.mx_campaign_out
             except:
                 mx_campaign_out = 0.0 # no manage campaign
+            name = clean('%s %s' % (product.name, product.colour or ''))   
             f_out.write(mask % (        
                 product.default_code, # 1. codice
-                clean('%s %s' % (product.name, product.colour or '')), # 2. descrizione
+                name, # 2. descrizione
                 mx_net_qty, # 3. esistenza (no MRP)
                 product.mx_oc_out, # 4. sospesi_cliente
                 product.mx_of_in, # 5. ordinati
@@ -133,7 +184,45 @@ class ProductProduct(orm.Model):
                 container, # 15. container 
                 product.inventory_category_id.id, # 16. inventory category
                 ))
+            
+            # -----------------------------------------------------------------
+            # Excel export:
+            # -----------------------------------------------------------------
+            if not self.check_excel_export(product):
+                continue # Not exported
+
+            availability = mx_net_qty - product.mx_oc_out
+            
+            # Color setup:
+            if availability > 0:
+                text_color = excel_format['text']['green']
+                number_color = excel_format['number']['green']
+            elif availability < 0:
+                text_color = excel_format['text']['red']
+                number_color = excel_format['number']['red']
+            else:    
+                text_color = excel_format['text']['white']
+                number_color = excel_format['number']['white']
+
+            row += 1
+            excel_pool.write_xls_line(ws_name, row, (
+                '', 
+                product.default_code, # 1. codice
+                name, # 2. descrizione
+                (availability, number_color),
+                (product.mx_of_in, number_color), # 5. ordinati
+                product.mx_of_date, # 8. data_arrivo
+                (mx_campaign_out, number_color), # 10. campagna
+                (product.lst_price, number_color), # 7. prezzo (calculated 50 + 20)
+                #product.standard_price, # 11. costo
+                #product.customer_cost, # 12. costo1  (fco/customer)
+                #product.company_cost, # 13. costo2  (fco/stock)
+                product.inventory_category_id.id,
+                ), default_format=text_color)
                 
+        # Excel save file:
+        excel_pool.save_file_as(excel_filename) 
+
         # Publish via FTP and call import document  
         _logger.warning('Run %s' % publish)
         os.system(publish)   

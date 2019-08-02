@@ -43,7 +43,12 @@ class ProductProduct(orm.Model):
     """
     _inherit = 'product.product'
 
-    def product_status_publish_php(self, cr, uid, context=None):
+    def check_excel_export(self, product):
+        ''' Override function for get product select for excel
+        '''
+        return product.inventory_category_id.id == 2
+        
+    """def product_status_publish_php(self, cr, uid, context=None):
         ''' Override function for get prodcut selected for publish
         '''
         company_proxy = self.pool.get('res.company').browse(
@@ -52,6 +57,6 @@ class ProductProduct(orm.Model):
         
         return self.search(cr, uid, [
             ('inventory_category_id', 'in', php_category_ids)
-            ], context=context)
+            ], context=context)"""
         
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

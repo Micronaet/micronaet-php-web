@@ -31,6 +31,7 @@
         'base',
         'inventory_field',
         'mx_stock_status',
+        'excel_export',
         ],
     'init_xml': [],
     'demo': [],
