@@ -123,10 +123,10 @@
                 <tr>
                     <th>
                         <?php if ($_GET['company'] == "fia"){ ?>
-                        <a href="/excel/Fiam.xlsx"><img src="/images/excel.png" alt="Scarica listino FIAM" height="42" width="42"></a>
+                        <a href="/excel/Fiam.xlsx"><img src="/images/excel.png" alt="Scarica listino FIAM" height="38" width="38"></a>
                         <?php } ?>
                         <?php if ($_GET['company'] == "gpb"){ ?>
-                        <a href="/excel/GPB.xlsx"><img src="/images/excel.png" alt="Scarica listino GPB" height="42" width="42"></a>
+                        <a href="/excel/GPB.xlsx"><img src="/images/excel.png" alt="Scarica listino GPB" height="38" width="38"></a>
                         <?php } ?>
                     </th>
                     <th>
