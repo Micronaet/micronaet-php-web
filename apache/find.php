@@ -121,7 +121,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th colspan="2">
+                    <th>
+                        <a href="/excel/Fiam.xlsx"><img src="/images/excel.png" alt="Scarica listino FIAM" height="42" width="42"></a>
+                    </th>
+                    <th>
                         <input type="submit" name="Submit" value="Cerca">
                     </th>
                 </tr>
