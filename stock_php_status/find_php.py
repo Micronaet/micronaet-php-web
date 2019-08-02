@@ -92,7 +92,8 @@ class ProductProduct(orm.Model):
             return True
             
         path = '/home/administrator/photo/output'
-        excel_filename = os.path.join(path, '%s.xlsx' % cr.dbname)    
+        excel_filename = '%s.xlsx' % cr.dbname
+        excel_fullname = os.path.join(path, excel_filename)    
 
         publish = '%s/publish.excel.ftp.sh %s %s' % (
             path, filename, excel_filename)
@@ -220,7 +221,7 @@ class ProductProduct(orm.Model):
                 ), default_format=text_color)
                 
         # Excel save file:
-        excel_pool.save_file_as(excel_filename) 
+        excel_pool.save_file_as(excel_fullname) 
 
         # Publish via FTP and call import document  
         _logger.warning('Run %s' % publish)
