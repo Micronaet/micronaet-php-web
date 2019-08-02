@@ -213,11 +213,10 @@ class ProductProduct(orm.Model):
                 (product.mx_of_in, number_color), # 5. ordinati
                 product.mx_of_date, # 8. data_arrivo
                 (mx_campaign_out, number_color), # 10. campagna
-                (product.lst_price, number_color), # 7. prezzo (calculated 50 + 20)
+                (product.lst_price, number_color), # 7. prezzo (50 + 20)
                 #product.standard_price, # 11. costo
                 #product.customer_cost, # 12. costo1  (fco/customer)
                 #product.company_cost, # 13. costo2  (fco/stock)
-                product.inventory_category_id.id,
                 ), default_format=text_color)
                 
         # Excel save file:
