@@ -122,12 +122,12 @@
                 </tr>
                 <tr>
                     <th>
-                        <? if ($_GET['company'] == "fia"){?>
+                        <?php if ($_GET['company'] == "fia"){?>
                         <a href="/excel/Fiam.xlsx"><img src="/images/excel.png" alt="Scarica listino FIAM" height="42" width="42"></a>
-                        <? } ?>
-                        <? else { ?>
+                        <?php } ?>
+                        <?php else { ?>
                         <a href="/excel/GPB.xlsx"><img src="/images/excel.png" alt="Scarica listino GPB" height="42" width="42"></a>
-                        <? } ?>
+                        <?php } ?>
                     </th>
                     <th>
                         <input type="submit" name="Submit" value="Cerca">
