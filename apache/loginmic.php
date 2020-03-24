@@ -14,9 +14,6 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 	    'user' => 'tisti', 'passwd' => 'itsit357!', 'root' => false,
     );
     $utenti[] = array(
-        'user' => 'arnaud', 'passwd' => 'Krottev3', 'root' => false,
-    );
-    $utenti[] = array(
         'user' => 'lanfredi', 'passwd' => 'relax', 'root' => false,
     );
     $utenti[] = array(
@@ -27,12 +24,6 @@ if(isset($_POST['user']) && isset($_POST['password'])){
     );
     $utenti[] = array(
         'user' => 'ufficio', 'passwd' => 'fiam1975', 'root' => true,
-    );
-    $utenti[] = array(
-	    'user' => 'giacomo', 'passwd' => 'fiore', 'root' => false,
-    );
-    $utenti[] = array(
-	    'user' => 'greco', 'passwd' => 'atene', 'root' => false,
     );
     $utenti[] = array(
 	    'user' => 'bussetti', 'passwd' => 'cotone', 'root' => false,
@@ -51,9 +42,6 @@ if(isset($_POST['user']) && isset($_POST['password'])){
     );
     $utenti[] = array(
 	    'user' => 'dispo', 'passwd' => 'fiamgpb', 'root' => false,
-    );
-    $utenti[] = array(
-	    'user' => 'covadonga', 'passwd' => '#Avoc753@', 'root' => false,
     );
     $utenti[] = array(
 	    'user' => 'gwm', 'passwd' => '#GWM753@', 'root' => false,
