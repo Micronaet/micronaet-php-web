@@ -29,6 +29,9 @@ if(isset($_POST['user']) && isset($_POST['password'])){
 	    'user' => 'bussetti', 'passwd' => 'cotone', 'root' => false,
     );
     $utenti[] = array(
+	    'user' => 'luigi', 'passwd' => 'DF@Sbbe#cot', 'root' => false,
+    );
+    $utenti[] = array(
 	    'user' => 'natoli', 'passwd' => 'isola', 'root' => false,
     );
     $utenti[] = array(
