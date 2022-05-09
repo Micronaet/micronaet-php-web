@@ -19,6 +19,8 @@
 ###############################################################################
 import os
 import logging
+import pdb
+
 from openerp.osv import fields, osv, expression, orm
 from datetime import datetime, timedelta
 from openerp import SUPERUSER_ID, api
@@ -143,6 +145,9 @@ class ProductProduct(orm.Model):
         for product in self.browse(cr, uid, selected_ids, context=context):
             # Only present text:
             mx_mrp_out = product.mx_mrp_out  # out for production
+            if product.default_code == '045XW NENE  S':
+                pdb.set_trace()
+
             if php_no_order:  # MRP Mode:
                 # No order only, consider only: MRP locked or Stock locked:
                 mx_net_qty = product.mx_net_mrp_qty
