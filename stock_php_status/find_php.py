@@ -145,8 +145,6 @@ class ProductProduct(orm.Model):
         for product in self.browse(cr, uid, selected_ids, context=context):
             # Only present text:
             mx_mrp_out = product.mx_mrp_out  # out for production
-            if product.default_code == '045XW NENE  S':
-                pdb.set_trace()
 
             if php_no_order:  # MRP Mode:
                 # No order only, consider only: MRP locked or Stock locked:
@@ -198,7 +196,10 @@ class ProductProduct(orm.Model):
             if not self.check_excel_export(product):
                 continue  # Not exported
 
-            availability = mx_net_qty - product.mx_oc_out
+            if php_no_order:  # MRP Mode:
+                availability = mx_net_qty  # - product.mx_oc_out
+            else:
+                availability = mx_net_qty - product.mx_oc_out
 
             # Color setup:
             if availability > 0:
