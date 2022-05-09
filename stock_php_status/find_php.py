@@ -146,14 +146,19 @@ class ProductProduct(orm.Model):
             # Only present text:
             mx_mrp_out = product.mx_mrp_out  # out for production
 
-            #if php_no_order:  # MRP Mode:
-            #    # No order only, consider only: MRP locked or Stock locked:
-            #    mx_net_qty = product.mx_net_mrp_qty
-            #    mx_lord_qty = mx_net_qty - product.mx_mrp_b_locked
-            #else:
-            # Consider net without order:
-            mx_net_qty = product.mx_net_qty - mx_mrp_out
-            mx_lord_qty = product.mx_lord_qty - mx_mrp_out
+            if php_no_order:  # MRP Mode:
+                # No order only, consider only: MRP locked or Stock locked:
+                # todo correct? this fields is just for test?
+                mx_net_qty = product.mx_net_mrp_qty
+                locked_qty = product.mx_mrp_b_locked
+                mx_lord_qty = mx_net_qty - locked_qty
+                mx_oc_out = locked_qty  # No OC but consider only the locked!
+            else:
+                # Consider net without order:
+                mx_net_qty = product.mx_net_qty - mx_mrp_out
+                mx_lord_qty = product.mx_lord_qty - mx_mrp_out
+                mx_oc_out = product.mx_oc_out
+
             if mx_net_qty <= 0 and mx_lord_qty <= 0:
                 continue
 
@@ -175,7 +180,7 @@ class ProductProduct(orm.Model):
                 product.default_code,  # 1. codice
                 name,  # 2. descrizione
                 mx_net_qty,  # 3. esistenza (no MRP)
-                product.mx_oc_out,  # 4. sospesi_cliente
+                mx_oc_out,  # 4. sospesi_cliente
                 product.mx_of_in,  # 5. ordinati
                 mx_lord_qty,  # 6. dispo_lorda (no MRP)
                 product.lst_price,  # 7. prezzo (calculated 50 + 20)
@@ -196,9 +201,9 @@ class ProductProduct(orm.Model):
             if not self.check_excel_export(product):
                 continue  # Not exported
 
-            #if php_no_order:  # MRP Mode:
+            # if php_no_order:  # MRP Mode:
             #    availability = mx_net_qty  # - product.mx_oc_out
-            #else:
+            # else:
             availability = mx_net_qty - product.mx_oc_out
 
             # Color setup:
