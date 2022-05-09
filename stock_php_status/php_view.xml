@@ -10,7 +10,8 @@
                     <page string="PHP">
                         <group colspan="4" col="4">
                             <field name="php_filename" />
-                            <field name="php_category_ids" widget="many2many_tags"/>
+                            <field name="php_no_order" />
+                            <field name="php_category_ids" widget="many2many_tags" colspan="4"/>
                         </group>
                     </page>
                 </xpath>

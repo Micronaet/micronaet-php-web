@@ -30,13 +30,14 @@ from openerp import SUPERUSER_ID, api
 from openerp import tools
 from openerp.tools.translate import _
 from openerp.tools.float_utils import float_round as round
-from openerp.tools import (DEFAULT_SERVER_DATE_FORMAT, 
-    DEFAULT_SERVER_DATETIME_FORMAT, 
-    DATETIME_FORMATS_MAP, 
+from openerp.tools import (DEFAULT_SERVER_DATE_FORMAT,
+    DEFAULT_SERVER_DATETIME_FORMAT,
+    DATETIME_FORMATS_MAP,
     float_compare)
 
 
 _logger = logging.getLogger(__name__)
+
 
 class ProductProduct(orm.Model):
     """ Model name: ProductProduct
@@ -44,8 +45,6 @@ class ProductProduct(orm.Model):
     _inherit = 'product.product'
 
     def product_status_publish_php(self, cr, uid, context=None):
-        ''' Override function for get product selected for publish
-        '''
+        """ Override function for get product selected for publish
+        """
         return self.search(cr, uid, [], context=context)
-        
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
