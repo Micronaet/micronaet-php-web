@@ -144,7 +144,7 @@ class ProductProduct(orm.Model):
             # Only present text:
             mx_mrp_out = product.mx_mrp_out  # out for production
             if php_no_order:  # MRP Mode:
-                # No order only, consider only: MRP locked or Stock locked!
+                # No order only, consider only: MRP locked or Stock locked:
                 mx_net_qty = product.mx_net_mrp_qty - product.mx_mrp_b_locked
             else:
                 # Consider net without order:
