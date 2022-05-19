@@ -278,7 +278,8 @@
                             echo "<td>$image</td>";
                         }*/
 
-                    echo "<td style='background:$bgcolor;'><img src='image.php?code=$codice&company=$company' width='64'/></td>";
+                    $codice_immagine=str_replace(' ', '_', $code);
+                    echo "<td style='background:$bgcolor;'><img src='image.php?code=$codice_immagine&company=$company' width='64'/></td>";
 
                     echo "<td style='background:$bgcolor;'>$codice</td>";
                     echo "<td style='background:$bgcolor;'>$descrizione</td>";
