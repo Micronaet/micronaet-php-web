@@ -242,7 +242,7 @@
                     }
                 if ((float)$ordinati > 0 and $company == 'gpb'){
                     $bgcolor2 = '#fcf47e';
-                    $title="'$dispo_lorda + $ordinati";
+                    $title="$dispo_lorda + $ordinati";
                 }
 
                 // $status = $x['status'];
