@@ -238,18 +238,22 @@
 
                 /*
                 $disponibile = (float)$quantity - (float)$prenotato - (float)$campagne;
+                if ($company == 'gpb'){
+                    $disponibile += $ordinati;
+                }
                 $bgcolor2 = '#f19393';
-                 if((float)$disponibile <= 0){
+                if((float)$disponibile <= 0){
                     $bgcolor2 = '#f19393';
                     }
-
                 if((float)$disponibile > 0){
                     $bgcolor2 = '#feed01';
                     }
-
                 if((float)$disponibile >= 10){
                     $bgcolor2 = '#2ed245';
                     }
+                if ((float)$ordinati > 0 and $company == 'gpb'){
+                    $bgcolor2 = '#fcf47e';
+                }
 
                 $image = '';
                 $image800 = '';
