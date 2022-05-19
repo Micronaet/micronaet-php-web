@@ -1,11 +1,8 @@
 <?php
-    // todo remove put in root folder and change path and web server
     // open the file in a binary mode:
     $code = $_GET['code'];
     $company = $_GET['company'];
-
-    //$name = "./immagini/$code.jpg";
-    $name = "./images_$company/$code.jpg";
+    $name = "./images/$company/$code.jpg";
 
     $fp = fopen($name, 'rb');
 
