@@ -240,7 +240,11 @@
                 if ((float)$dispo_lorda <= 0){
                     $bgcolor2 = '#FF9999';
                     }
-                //$status = $x['status'];
+                if ((float)$ordinati > 0 and $company == 'gpb'){
+                    $bgcolor2 = '#fcf47e';
+                }
+
+                // $status = $x['status'];
 
                 /*
                 $disponibile = (float)$quantity - (float)$prenotato - (float)$campagne;
