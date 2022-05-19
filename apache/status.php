@@ -239,6 +239,7 @@
 
                 if ((float)$dispo_lorda <= 0){
                     $bgcolor2 = '#FF9999';
+                    die('Ciao');
                     }
                 //$status = $x['status'];
 
