@@ -238,12 +238,12 @@
                     $dispo_lorda += $ordinati;
                 }
 
-                if ((float)$dispo_lorda <= 0){
-                    $bgcolor2 = '#FF9999';
-                    }
                 if ((float)$ordinati > 0 and $company == 'gpb'){
                     $bgcolor2 = '#fcf47e';
                 }
+                if ((float)$dispo_lorda <= 0){
+                    $bgcolor2 = '#FF9999';
+                    }
 
                 // $status = $x['status'];
 
