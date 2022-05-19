@@ -242,7 +242,7 @@
                     }
                 if ((float)$ordinati > 0 and $company == 'gpb'){
                     $bgcolor2 = '#fcf47e';
-                    $alt='$dispo_lorda + $ordinati';
+                    $title="'$dispo_lorda + $ordinati";
                 }
 
                 // $status = $x['status'];
@@ -296,7 +296,7 @@
                     echo "<td style='background:$bgcolor;'>$codice</td>";
                     echo "<td style='background:$bgcolor;'>$descrizione</td>";
 
-                    echo "<td style='background:$bgcolor2;' class='number' alt='$alt'>$dispo_lorda</td>";
+                    echo "<td style='background:$bgcolor2;' class='number' title='$title'>$dispo_lorda</td>";
                     if ($_GET['root'] == true){
                         echo "<td style='background:$bgcolor;' class='number'>$esistenza</td>";
                         }
