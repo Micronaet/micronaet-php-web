@@ -231,6 +231,12 @@
                 $prezzo = number_format($x['prezzo'], 2, ',','');
 
                 $bgcolor2 = '#99FF99';
+
+                // Dispo Lorda for GPB:
+                if ($company == 'gpb'){
+                    $dispo_lorda += $ordinati;
+                }
+
                 if ((float)$dispo_lorda <= 0){
                     $bgcolor2 = '#FF9999';
                     }
@@ -238,9 +244,6 @@
 
                 /*
                 $disponibile = (float)$quantity - (float)$prenotato - (float)$campagne;
-                if ($company == 'gpb'){
-                    $disponibile += $ordinati;
-                }
                 $bgcolor2 = '#f19393';
                 if((float)$disponibile <= 0){
                     $bgcolor2 = '#f19393';
