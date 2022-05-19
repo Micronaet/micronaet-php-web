@@ -234,7 +234,7 @@
 
                 // Dispo Lorda for GPB:
                 if ($company == 'gpb'){
-                    $title="Dispo: $dispo_lorda + OF: $ordinati";
+                    $title="Magazzino: $dispo_lorda + In ordine: $ordinati";
                     $dispo_lorda += $ordinati;
                 }
 
