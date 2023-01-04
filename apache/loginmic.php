@@ -3,7 +3,7 @@ if(!session_id()) session_start();
 
 if(isset($_POST['user']) && isset($_POST['password'])){
     $utenti = array();
-    
+
     $utenti[] = array(
 	    'user' => 'barisan', 'passwd' => 'campeggio', 'root' => false,
     );
@@ -55,15 +55,18 @@ if(isset($_POST['user']) && isset($_POST['password'])){
     $utenti[] = array(
 	    'user' => 'hanne', 'passwd' => 'HCebbesen', 'root' => false,
     );
+    $utenti[] = array(
+	    'user' => 'spain', 'passwd' => 'Rfts@45H', 'root' => false,
+    );
     $_SESSION['root'] = true;
     foreach($utenti as $u){
 	    if($_POST['user'] == $u['user'] && $_POST['password'] == $u['passwd']) {
-		    $_SESSION['logged'] = true;		    
+		    $_SESSION['logged'] = true;
 		    $_SESSION['root'] = $u['root'];
 		    header('Location: find.php');
 		    die;
         	}
-        }	
+        }
     }
 
 echo <<<OUT
