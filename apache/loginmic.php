@@ -5,9 +5,6 @@ if(isset($_POST['user']) && isset($_POST['password'])){
     $utenti = array();
 
     $utenti[] = array(
-	    'user' => 'barisan', 'passwd' => 'campeggio', 'root' => false,
-    );
-    $utenti[] = array(
 	    'user' => 'eventi', 'passwd' => 'itneve157!', 'root' => false,
     );
     $utenti[] = array(
